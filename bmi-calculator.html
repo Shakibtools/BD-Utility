@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free BMI Calculator by BD Utility. Calculate BMI using your height and weight.">
+<meta name="description" content="Free BMI Calculator by BD Utility. Calculate BMI using height in cm or feet and inches, and weight in kg or pounds.">
 
 <title>BMI Calculator | BD Utility</title>
 
@@ -47,7 +47,7 @@ header p{
 
 .container{
     width:92%;
-    max-width:520px;
+    max-width:540px;
     margin:35px auto 50px;
 }
 
@@ -77,7 +77,7 @@ header p{
 }
 
 .input-group{
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 label{
@@ -88,13 +88,35 @@ label{
     margin-bottom:8px;
 }
 
+.unit-select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccd8d9;
+    border-radius:10px;
+    background:white;
+    color:#173235;
+    font-size:15px;
+    outline:none;
+    margin-bottom:10px;
+}
+
+.unit-select:focus{
+    border-color:#0f4c4c;
+}
+
 .input-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.input-box{
     position:relative;
 }
 
 input{
     width:100%;
-    padding:14px 70px 14px 14px;
+    padding:14px 55px 14px 14px;
     border:1px solid #ccd8d9;
     border-radius:11px;
     font-size:17px;
@@ -112,8 +134,12 @@ input:focus{
     top:50%;
     transform:translateY(-50%);
     color:#718082;
-    font-size:14px;
+    font-size:13px;
     font-weight:bold;
+}
+
+.single-input{
+    position:relative;
 }
 
 .calculate{
@@ -126,7 +152,7 @@ input:focus{
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:5px;
+    margin-top:3px;
 }
 
 .calculate:hover{
@@ -233,6 +259,10 @@ footer{
     font-size:13px;
 }
 
+.hidden{
+    display:none;
+}
+
 @media(max-width:450px){
 
     .calculator{
@@ -241,6 +271,10 @@ footer{
 
     .bmi-number{
         font-size:35px;
+    }
+
+    .input-row{
+        grid-template-columns:1fr 1fr;
     }
 
 }
@@ -285,11 +319,28 @@ footer{
 
         <div class="input-group">
 
-            <label for="weight">
+            <label>
                 Weight
             </label>
 
-            <div class="input-row">
+            <select
+                id="weightUnit"
+                class="unit-select"
+                onchange="changeWeightUnit()"
+            >
+
+                <option value="kg">
+                    Kilogram (kg)
+                </option>
+
+                <option value="lb">
+                    Pound (lb)
+                </option>
+
+            </select>
+
+
+            <div class="single-input">
 
                 <input
                     type="number"
@@ -300,7 +351,10 @@ footer{
                     step="0.1"
                 >
 
-                <span class="unit">
+                <span
+                    class="unit"
+                    id="weightLabel"
+                >
                     kg
                 </span>
 
@@ -313,15 +367,37 @@ footer{
 
         <div class="input-group">
 
-            <label for="height">
+            <label>
                 Height
             </label>
 
-            <div class="input-row">
+            <select
+                id="heightUnit"
+                class="unit-select"
+                onchange="changeHeightUnit()"
+            >
+
+                <option value="cm">
+                    Centimeter (cm)
+                </option>
+
+                <option value="ftin">
+                    Feet &amp; Inches (ft/in)
+                </option>
+
+            </select>
+
+
+            <!-- CM -->
+
+            <div
+                id="cmInput"
+                class="single-input"
+            >
 
                 <input
                     type="number"
-                    id="height"
+                    id="heightCm"
                     placeholder="যেমন: 165"
                     min="50"
                     max="300"
@@ -331,6 +407,51 @@ footer{
                 <span class="unit">
                     cm
                 </span>
+
+            </div>
+
+
+            <!-- FEET & INCHES -->
+
+            <div
+                id="ftInInput"
+                class="input-row hidden"
+            >
+
+                <div class="input-box">
+
+                    <input
+                        type="number"
+                        id="feet"
+                        placeholder="Feet"
+                        min="1"
+                        max="9"
+                        step="1"
+                    >
+
+                    <span class="unit">
+                        ft
+                    </span>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <input
+                        type="number"
+                        id="inches"
+                        placeholder="Inches"
+                        min="0"
+                        max="11.99"
+                        step="0.1"
+                    >
+
+                    <span class="unit">
+                        in
+                    </span>
+
+                </div>
 
             </div>
 
@@ -479,39 +600,202 @@ footer{
 
 <script>
 
-function calculateBMI(){
+
+function changeWeightUnit(){
+
+    const unit =
+        document.getElementById("weightUnit").value;
+
+    document.getElementById("weightLabel")
+        .textContent = unit;
+
+}
+
+
+
+function changeHeightUnit(){
+
+    const unit =
+        document.getElementById("heightUnit").value;
+
+
+    const cmInput =
+        document.getElementById("cmInput");
+
+    const ftInInput =
+        document.getElementById("ftInInput");
+
+
+    if(unit === "cm"){
+
+        cmInput.classList.remove("hidden");
+
+        ftInInput.classList.add("hidden");
+
+    }else{
+
+        cmInput.classList.add("hidden");
+
+        ftInInput.classList.remove("hidden");
+
+    }
+
+}
+
+
+
+function getWeightInKg(){
 
     const weight =
         parseFloat(
             document.getElementById("weight").value
         );
 
-    const heightCm =
-        parseFloat(
-            document.getElementById("height").value
-        );
+    const unit =
+        document.getElementById("weightUnit").value;
 
 
     if(
         isNaN(weight) ||
-        isNaN(heightCm) ||
-        weight <= 0 ||
-        heightCm <= 0
+        weight <= 0
     ){
 
-        alert("Please enter a valid weight and height.");
+        return null;
+
+    }
+
+
+    if(unit === "kg"){
+
+        return weight;
+
+    }
+
+
+    /* Pound to KG */
+
+    return weight * 0.45359237;
+
+}
+
+
+
+function getHeightInMeters(){
+
+    const unit =
+        document.getElementById("heightUnit").value;
+
+
+    /*
+        Centimeter
+    */
+
+    if(unit === "cm"){
+
+        const cm =
+            parseFloat(
+                document.getElementById("heightCm").value
+            );
+
+
+        if(
+            isNaN(cm) ||
+            cm <= 0
+        ){
+
+            return null;
+
+        }
+
+
+        return cm / 100;
+
+    }
+
+
+    /*
+        Feet + Inches
+    */
+
+    const feet =
+        parseFloat(
+            document.getElementById("feet").value
+        ) || 0;
+
+
+    const inches =
+        parseFloat(
+            document.getElementById("inches").value
+        ) || 0;
+
+
+    if(
+        feet <= 0 &&
+        inches <= 0
+    ){
+
+        return null;
+
+    }
+
+
+    if(inches < 0 || inches >= 12){
+
+        alert("Inches must be between 0 and 11.99.");
+
+        return null;
+
+    }
+
+
+    const totalInches =
+        (feet * 12) + inches;
+
+
+    return totalInches * 0.0254;
+
+}
+
+
+
+function calculateBMI(){
+
+    const weightKg =
+        getWeightInKg();
+
+
+    const heightMeters =
+        getHeightInMeters();
+
+
+    if(
+        weightKg === null ||
+        heightMeters === null
+    ){
+
+        alert(
+            "Please enter a valid weight and height."
+        );
 
         return;
 
     }
 
 
-    const heightM =
-        heightCm / 100;
+    if(heightMeters <= 0){
+
+        alert(
+            "Please enter a valid height."
+        );
+
+        return;
+
+    }
 
 
     const bmi =
-        weight / (heightM * heightM);
+        weightKg /
+        (heightMeters * heightMeters);
 
 
     const roundedBMI =
@@ -577,13 +861,32 @@ function resetCalculator(){
     document.getElementById("weight")
         .value = "";
 
-    document.getElementById("height")
+    document.getElementById("heightCm")
         .value = "";
+
+    document.getElementById("feet")
+        .value = "";
+
+    document.getElementById("inches")
+        .value = "";
+
+    document.getElementById("weightUnit")
+        .value = "kg";
+
+    document.getElementById("heightUnit")
+        .value = "cm";
+
+
+    changeWeightUnit();
+
+    changeHeightUnit();
+
 
     document.getElementById("result")
         .style.display = "none";
 
 }
+
 
 </script>
 
