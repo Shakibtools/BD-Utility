@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="BD Utility - Simple and useful free online tools for everyone.">
+<meta name="theme-color" content="#0f4c4c">
+
+<title>BD Utility | Free Online Tools</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
+    background:#f4f7f8;
+    color:#173235;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#083b3b,#0f4c4c);
+    color:white;
+    text-align:center;
+    padding:38px 20px 32px;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    font-size:18px;
+    margin-left:5px;
+}
+
+.tagline{
+    margin-top:10px;
+    font-size:16px;
+    color:#dceeee;
+}
+
+/* MAIN */
+
+main{
+    width:92%;
+    max-width:1050px;
+    margin:45px auto 60px;
+}
+
+.welcome{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.welcome h1{
+    font-size:30px;
+    color:#0f4c4c;
+    margin-bottom:10px;
+}
+
+.welcome p{
+    color:#667b7d;
+    font-size:16px;
+}
+
+/* TOOLS */
+
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.tool-card{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:18px;
+    padding:28px 24px;
+    min-height:235px;
+    text-decoration:none;
+    color:inherit;
+    box-shadow:0 5px 20px rgba(15,76,76,.07);
+    transition:.25s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.tool-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(15,76,76,.14);
+    border-color:#0f4c4c;
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    background:#e8f7f0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.tool-card h2{
+    font-size:21px;
+    color:#0f4c4c;
+    margin-bottom:8px;
+}
+
+.tool-card p{
+    font-size:14px;
+    line-height:1.6;
+    color:#687b7d;
+    flex:1;
+}
+
+.open-tool{
+    display:inline-block;
+    margin-top:18px;
+    color:#0f4c4c;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* COMING SOON */
+
+.coming{
+    opacity:.78;
+    cursor:default;
+}
+
+.coming:hover{
+    transform:none;
+    border-color:#dce5e5;
+}
+
+.coming-badge{
+    display:inline-block;
+    margin-top:18px;
+    padding:6px 11px;
+    border-radius:20px;
+    background:#f1f3f4;
+    color:#707b7c;
+    font-size:11px;
+    font-weight:bold;
+    width:max-content;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px 15px;
+    border-top:1px solid #dde5e5;
+    color:#718082;
+    font-size:13px;
+    background:white;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .tools-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:28px 15px 25px;
+    }
+
+    .logo{
+        font-size:30px;
+    }
+
+    .tagline{
+        font-size:14px;
+    }
+
+    main{
+        width:90%;
+        margin-top:30px;
+    }
+
+    .welcome h1{
+        font-size:25px;
+    }
+
+    .welcome p{
+        font-size:14px;
+    }
+
+    .tools-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .tool-card{
+        min-height:210px;
+        padding:23px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        BD Utility <span>🇧🇩</span>
+    </div>
+
+    <div class="tagline">
+        Simple &amp; Useful Tools for Everyone
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="welcome">
+
+        <h1>
+            🧰 আমাদের প্রয়োজনীয় অনলাইন টুলস
+        </h1>
+
+        <p>
+            সহজ, দ্রুত এবং বিনামূল্যে বিভিন্ন Utility Tools ব্যবহার করুন।
+        </p>
+
+    </section>
+
+
+    <section class="tools-grid">
+
+
+        <!-- AGE CALCULATOR -->
+
+        <a href="age-calculator.html" class="tool-card">
+
+            <div class="icon">
+                🎂
+            </div>
+
+            <h2>
+                Age Calculator
+            </h2>
+
+            <p>
+                আপনার জন্মতারিখ দিয়ে সঠিক বয়স,
+                মোট দিন, সপ্তাহ, মাস এবং পরবর্তী
+                জন্মদিনের হিসাব দেখুন।
+            </p>
+
+            <span class="open-tool">
+                Open Calculator →
+            </span>
+
+        </a>
+
+
+        <!-- DATE CALCULATOR -->
+
+        <div class="tool-card coming">
+
+            <div class="icon">
+                📅
+            </div>
+
+            <h2>
+                Date Calculator
+            </h2>
+
+            <p>
+                দুইটি তারিখের মধ্যে কত বছর,
+                মাস ও দিন পার্থক্য তা সহজেই হিসাব করুন।
+            </p>
+
+            <span class="coming-badge">
+                COMING SOON
+            </span>
+
+        </div>
+
+
+        <!-- PERCENTAGE -->
+
+        <div class="tool-card coming">
+
+            <div class="icon">
+                %
+            </div>
+
+            <h2>
+                Percentage Calculator
+            </h2>
+
+            <p>
+                শতাংশ, বৃদ্ধি, হ্রাস এবং বিভিন্ন
+                Percentage দ্রুত হিসাব করুন।
+            </p>
+
+            <span class="coming-badge">
+                COMING SOON
+            </span>
+
+        </div>
+
+
+        <!-- SIMPLE CALCULATOR -->
+
+        <div class="tool-card coming">
+
+            <div class="icon">
+                🧮
+            </div>
+
+            <h2>
+                Simple Calculator
+            </h2>
+
+            <p>
+                দৈনন্দিন প্রয়োজনীয় যোগ, বিয়োগ,
+                গুণ ও ভাগ সহজে হিসাব করুন।
+            </p>
+
+            <span class="coming-badge">
+                COMING SOON
+            </span>
+
+        </div>
+
+
+        <!-- BMI -->
+
+        <div class="tool-card coming">
+
+            <div class="icon">
+                ⚖️
+            </div>
+
+            <h2>
+                BMI Calculator
+            </h2>
+
+            <p>
+                আপনার উচ্চতা ও ওজনের ভিত্তিতে
+                BMI হিসাব করুন।
+            </p>
+
+            <span class="coming-badge">
+                COMING SOON
+            </span>
+
+        </div>
+
+
+        <!-- NUMBER TOOLS -->
+
+        <div class="tool-card coming">
+
+            <div class="icon">
+                🔢
+            </div>
+
+            <h2>
+                Number Tools
+            </h2>
+
+            <p>
+                বিভিন্ন প্রয়োজনীয় Number এবং
+                Conversion Tools এক জায়গায় ব্যবহার করুন।
+            </p>
+
+            <span class="coming-badge">
+                COMING SOON
+            </span>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 BD Utility · Free Online Tools
+
+</footer>
+
+
+</body>
+</html>
