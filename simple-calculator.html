@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Free Simple Calculator by BD Utility. Perform basic arithmetic calculations quickly and easily.">
+
+<title>Simple Calculator | BD Utility</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
+    background:#f4f7f8;
+    color:#173235;
+    min-height:100vh;
+}
+
+header{
+    background:linear-gradient(135deg,#083b3b,#0f4c4c);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:800;
+}
+
+.logo span{
+    font-size:17px;
+}
+
+header p{
+    margin-top:8px;
+    color:#dceeee;
+    font-size:14px;
+}
+
+.container{
+    width:92%;
+    max-width:430px;
+    margin:35px auto 50px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.title h1{
+    color:#0f4c4c;
+    font-size:29px;
+    margin-bottom:8px;
+}
+
+.title p{
+    color:#687b7d;
+    font-size:14px;
+}
+
+.calculator{
+    background:#ffffff;
+    border:1px solid #dce5e5;
+    border-radius:22px;
+    padding:20px;
+    box-shadow:0 8px 30px rgba(15,76,76,.10);
+}
+
+.display{
+    background:#edf3f3;
+    border-radius:15px;
+    min-height:105px;
+    padding:18px;
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:flex-end;
+    overflow:hidden;
+}
+
+.previous{
+    width:100%;
+    min-height:22px;
+    text-align:right;
+    color:#789091;
+    font-size:14px;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.current{
+    width:100%;
+    text-align:right;
+    color:#0f4c4c;
+    font-size:34px;
+    font-weight:bold;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+button{
+    height:65px;
+    border:none;
+    border-radius:14px;
+    background:#edf3f3;
+    color:#173235;
+    font-size:21px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.15s ease;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    background:#dfeaea;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+.operator{
+    background:#d9eeee;
+    color:#0f4c4c;
+}
+
+.action{
+    background:#e8f0f0;
+    color:#315759;
+}
+
+.clear{
+    background:#f1dddd;
+    color:#8a3d3d;
+}
+
+.equal{
+    background:#0f4c4c;
+    color:white;
+}
+
+.equal:hover{
+    background:#083b3b;
+}
+
+.zero{
+    grid-column:span 2;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    color:#0f4c4c;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+footer{
+    text-align:center;
+    padding:25px 15px;
+    background:white;
+    border-top:1px solid #dde5e5;
+    color:#718082;
+    font-size:13px;
+}
+
+@media(max-width:450px){
+
+    .container{
+        width:92%;
+    }
+
+    .calculator{
+        padding:15px;
+    }
+
+    button{
+        height:60px;
+        font-size:19px;
+    }
+
+    .current{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        BD Utility <span>🇧🇩</span>
+    </div>
+
+    <p>
+        Simple &amp; Useful Tools for Everyone
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <div class="title">
+
+        <h1>
+            Simple Calculator
+        </h1>
+
+        <p>
+            সহজে যোগ, বিয়োগ, গুণ, ভাগ এবং অন্যান্য হিসাব করুন।
+        </p>
+
+    </div>
+
+
+    <div class="calculator">
+
+        <div class="display">
+
+            <div class="previous" id="previous"></div>
+
+            <div class="current" id="current">
+                0
+            </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button class="clear" onclick="clearAll()">
+                AC
+            </button>
+
+            <button class="action" onclick="backspace()">
+                ⌫
+            </button>
+
+            <button class="action" onclick="percentage()">
+                %
+            </button>
+
+            <button class="operator" onclick="chooseOperator('÷')">
+                ÷
+            </button>
+
+
+            <button onclick="appendNumber('7')">
+                7
+            </button>
+
+            <button onclick="appendNumber('8')">
+                8
+            </button>
+
+            <button onclick="appendNumber('9')">
+                9
+            </button>
+
+            <button class="operator" onclick="chooseOperator('×')">
+                ×
+            </button>
+
+
+            <button onclick="appendNumber('4')">
+                4
+            </button>
+
+            <button onclick="appendNumber('5')">
+                5
+            </button>
+
+            <button onclick="appendNumber('6')">
+                6
+            </button>
+
+            <button class="operator" onclick="chooseOperator('-')">
+                −
+            </button>
+
+
+            <button onclick="appendNumber('1')">
+                1
+            </button>
+
+            <button onclick="appendNumber('2')">
+                2
+            </button>
+
+            <button onclick="appendNumber('3')">
+                3
+            </button>
+
+            <button class="operator" onclick="chooseOperator('+')">
+                +
+            </button>
+
+
+            <button class="zero" onclick="appendNumber('0')">
+                0
+            </button>
+
+            <button onclick="appendDecimal()">
+                .
+            </button>
+
+            <button class="equal" onclick="calculate()">
+                =
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <a href="index.html" class="back">
+        ← Back to Homepage
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 BD Utility · Free Online Tools
+
+</footer>
+
+
+<script>
+
+let currentValue = "0";
+let previousValue = "";
+let operator = null;
+let shouldResetScreen = false;
+
+
+const currentDisplay =
+    document.getElementById("current");
+
+const previousDisplay =
+    document.getElementById("previous");
+
+
+
+function updateDisplay(){
+
+    currentDisplay.textContent =
+        formatNumber(currentValue);
+
+    previousDisplay.textContent =
+        previousValue && operator
+        ? formatNumber(previousValue) + " " + operator
+        : "";
+
+}
+
+
+
+function formatNumber(value){
+
+    if(value === "Error"){
+        return value;
+    }
+
+    if(value === ""){
+        return "0";
+    }
+
+    const number = Number(value);
+
+    if(!Number.isFinite(number)){
+        return "Error";
+    }
+
+    return number.toLocaleString(
+        "en-US",
+        {
+            maximumFractionDigits:12
+        }
+    );
+
+}
+
+
+
+function appendNumber(number){
+
+    if(currentValue === "Error"){
+        clearAll();
+    }
+
+    if(shouldResetScreen){
+
+        currentValue = number;
+        shouldResetScreen = false;
+
+    }else{
+
+        if(currentValue === "0"){
+
+            currentValue = number;
+
+        }else{
+
+            currentValue += number;
+
+        }
+
+    }
+
+    updateDisplay();
+
+}
+
+
+
+function appendDecimal(){
+
+    if(currentValue === "Error"){
+        clearAll();
+    }
+
+    if(shouldResetScreen){
+
+        currentValue = "0.";
+        shouldResetScreen = false;
+
+    }else if(!currentValue.includes(".")){
+
+        currentValue += ".";
+
+    }
+
+    updateDisplay();
+
+}
+
+
+
+function chooseOperator(selectedOperator){
+
+    if(currentValue === "Error"){
+        return;
+    }
+
+    if(operator !== null && !shouldResetScreen){
+
+        calculate();
+
+    }
+
+    previousValue = currentValue;
+    operator = selectedOperator;
+    shouldResetScreen = true;
+
+    updateDisplay();
+
+}
+
+
+
+function calculate(){
+
+    if(
+        operator === null ||
+        previousValue === "" ||
+        currentValue === ""
+    ){
+        return;
+    }
+
+    const first =
+        Number(previousValue);
+
+    const second =
+        Number(currentValue);
+
+    let result;
+
+
+    if(operator === "+"){
+
+        result = first + second;
+
+    }else if(operator === "-"){
+
+        result = first - second;
+
+    }else if(operator === "×"){
+
+        result = first * second;
+
+    }else if(operator === "÷"){
+
+        if(second === 0){
+
+            currentValue = "Error";
+            previousValue = "";
+            operator = null;
+            shouldResetScreen = true;
+
+            updateDisplay();
+
+            return;
+
+        }
+
+        result = first / second;
+
+    }
+
+
+    if(!Number.isFinite(result)){
+
+        currentValue = "Error";
+
+    }else{
+
+        currentValue =
+            String(
+                Number(
+                    result.toPrecision(12)
+                )
+            );
+
+    }
+
+
+    previousValue = "";
+    operator = null;
+    shouldResetScreen = true;
+
+    updateDisplay();
+
+}
+
+
+
+function percentage(){
+
+    if(currentValue === "Error"){
+        return;
+    }
+
+    const value =
+        Number(currentValue);
+
+    currentValue =
+        String(value / 100);
+
+    updateDisplay();
+
+}
+
+
+
+function clearAll(){
+
+    currentValue = "0";
+    previousValue = "";
+    operator = null;
+    shouldResetScreen = false;
+
+    updateDisplay();
+
+}
+
+
+
+function backspace(){
+
+    if(shouldResetScreen ||
+       currentValue === "Error"){
+        return;
+    }
+
+    if(
+        currentValue.length <= 1 ||
+        (
+            currentValue.length === 2 &&
+            currentValue.startsWith("-")
+        )
+    ){
+
+        currentValue = "0";
+
+    }else{
+
+        currentValue =
+            currentValue.slice(0,-1);
+
+    }
+
+    updateDisplay();
+
+}
+
+
+
+/* KEYBOARD SUPPORT */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        const key = event.key;
+
+
+        if(
+            key >= "0" &&
+            key <= "9"
+        ){
+
+            appendNumber(key);
+
+        }else if(key === "."){
+
+            appendDecimal();
+
+        }else if(
+            key === "+" ||
+            key === "-" ||
+            key === "*" ||
+            key === "/"
+        ){
+
+            if(key === "*"){
+
+                chooseOperator("×");
+
+            }else if(key === "/"){
+
+                chooseOperator("÷");
+
+            }else{
+
+                chooseOperator(key);
+
+            }
+
+        }else if(
+            key === "Enter" ||
+            key === "="
+        ){
+
+            calculate();
+
+        }else if(
+            key === "Backspace"
+        ){
+
+            backspace();
+
+        }else if(
+            key === "Escape"
+        ){
+
+            clearAll();
+
+        }else if(key === "%"){
+
+            percentage();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
