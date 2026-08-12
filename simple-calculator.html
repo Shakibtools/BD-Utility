@@ -230,7 +230,7 @@ footer{
         </h1>
 
         <p>
-            সহজে যোগ, বিয়োগ, গুণ, ভাগ এবং অন্যান্য হিসাব করুন।
+            যোগ, বিয়োগ, গুণ, ভাগ এবং Percentage হিসাব করুন।
         </p>
 
     </div>
@@ -356,6 +356,7 @@ let currentValue = "0";
 let previousValue = "";
 let operator = null;
 let shouldResetScreen = false;
+let percentageMode = false;
 
 
 const currentDisplay =
@@ -432,6 +433,8 @@ function appendNumber(number){
 
     }
 
+    percentageMode = false;
+
     updateDisplay();
 
 }
@@ -455,6 +458,8 @@ function appendDecimal(){
 
     }
 
+    percentageMode = false;
+
     updateDisplay();
 
 }
@@ -476,6 +481,81 @@ function chooseOperator(selectedOperator){
     previousValue = currentValue;
     operator = selectedOperator;
     shouldResetScreen = true;
+    percentageMode = false;
+
+    updateDisplay();
+
+}
+
+
+
+/*
+    Percentage Logic
+
+    Example:
+
+    500 - 10%
+    = 500 - (500 × 10 / 100)
+    = 450
+
+    500 + 10%
+    = 550
+
+    500 × 10%
+    = 50
+
+    500 ÷ 10%
+    = 5000
+*/
+
+function percentage(){
+
+    if(currentValue === "Error"){
+        return;
+    }
+
+
+    const current =
+        Number(currentValue);
+
+
+    if(
+        previousValue !== "" &&
+        operator !== null
+    ){
+
+        const base =
+            Number(previousValue);
+
+
+        if(
+            operator === "+" ||
+            operator === "-"
+        ){
+
+            currentValue =
+                String(
+                    base * current / 100
+                );
+
+        }else{
+
+            currentValue =
+                String(
+                    current / 100
+                );
+
+        }
+
+    }else{
+
+        currentValue =
+            String(current / 100);
+
+    }
+
+
+    percentageMode = true;
 
     updateDisplay();
 
@@ -493,26 +573,56 @@ function calculate(){
         return;
     }
 
+
     const first =
         Number(previousValue);
 
-    const second =
+
+    let second =
         Number(currentValue);
+
+
+    /*
+        For + and -
+
+        500 + 10%
+        means 500 + 10% of 500
+
+        500 - 10%
+        means 500 - 10% of 500
+    */
+
+    if(
+        percentageMode &&
+        (
+            operator === "+" ||
+            operator === "-"
+        )
+    ){
+
+        second =
+            first * second / 100;
+
+    }
+
 
     let result;
 
 
     if(operator === "+"){
 
-        result = first + second;
+        result =
+            first + second;
 
     }else if(operator === "-"){
 
-        result = first - second;
+        result =
+            first - second;
 
     }else if(operator === "×"){
 
-        result = first * second;
+        result =
+            first * second;
 
     }else if(operator === "÷"){
 
@@ -522,6 +632,7 @@ function calculate(){
             previousValue = "";
             operator = null;
             shouldResetScreen = true;
+            percentageMode = false;
 
             updateDisplay();
 
@@ -529,7 +640,8 @@ function calculate(){
 
         }
 
-        result = first / second;
+        result =
+            first / second;
 
     }
 
@@ -553,24 +665,7 @@ function calculate(){
     previousValue = "";
     operator = null;
     shouldResetScreen = true;
-
-    updateDisplay();
-
-}
-
-
-
-function percentage(){
-
-    if(currentValue === "Error"){
-        return;
-    }
-
-    const value =
-        Number(currentValue);
-
-    currentValue =
-        String(value / 100);
+    percentageMode = false;
 
     updateDisplay();
 
@@ -584,6 +679,7 @@ function clearAll(){
     previousValue = "";
     operator = null;
     shouldResetScreen = false;
+    percentageMode = false;
 
     updateDisplay();
 
@@ -593,10 +689,13 @@ function clearAll(){
 
 function backspace(){
 
-    if(shouldResetScreen ||
-       currentValue === "Error"){
+    if(
+        shouldResetScreen ||
+        currentValue === "Error"
+    ){
         return;
     }
+
 
     if(
         currentValue.length <= 1 ||
@@ -614,6 +713,7 @@ function backspace(){
             currentValue.slice(0,-1);
 
     }
+
 
     updateDisplay();
 
