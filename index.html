@@ -1,259 +1,509 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BD Utility Age Calculator - Calculate your exact age, next birthday and more.">
+<meta name="theme-color" content="#0f4c4c">
+<title>BD Utility | Age Calculator</title>
 
-    <title>BD Utility - Age Calculator</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+:root{
+--primary:#0f4c4c;
+--primary-dark:#083b3b;
+--accent:#16a085;
+--bg:#f4f7f8;
+--card:#fff;
+--text:#173235;
+--muted:#6b7b7d;
+--border:#d9e1e2;
+--success:#effbf4;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f7f9;
-            color: #1f2937;
-            min-height: 100vh;
-        }
+body{
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:linear-gradient(135deg,#f4f7f8,#eef5f5);
+color:var(--text);
+min-height:100vh;
+}
 
-        header {
-            background: #0f3d3e;
-            color: white;
-            padding: 22px 15px;
-            text-align: center;
-        }
+header{
+background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+color:#fff;
+padding:28px 15px;
+text-align:center;
+}
 
-        header h1 {
-            font-size: 28px;
-            margin-bottom: 6px;
-        }
+.logo{
+font-size:30px;
+font-weight:800;
+}
 
-        header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
+.logo span{
+font-size:17px;
+opacity:.9;
+}
 
-        .container {
-            max-width: 600px;
-            margin: 35px auto;
-            padding: 0 15px;
-        }
+header p{
+margin-top:7px;
+font-size:14px;
+opacity:.9;
+}
 
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
+.container{
+max-width:720px;
+margin:30px auto;
+padding:0 15px 30px;
+}
 
-        .card h2 {
-            text-align: center;
-            margin-bottom: 8px;
-            color: #0f3d3e;
-        }
+.card{
+background:var(--card);
+border-radius:20px;
+padding:30px;
+box-shadow:0 12px 35px rgba(15,76,76,.10);
+}
 
-        .subtitle {
-            text-align: center;
-            color: #6b7280;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
+.title{
+text-align:center;
+color:var(--primary);
+font-size:30px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+.subtitle{
+text-align:center;
+color:var(--muted);
+margin:8px 0 25px;
+font-size:15px;
+}
 
-        input[type="date"] {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 18px;
-        }
+label{
+display:block;
+font-weight:700;
+margin-bottom:8px;
+}
 
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #0f3d3e;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+input[type=date]{
+width:100%;
+padding:14px 15px;
+border:1px solid var(--border);
+border-radius:10px;
+font-size:16px;
+background:#fff;
+color:var(--text);
+}
 
-        button:hover {
-            opacity: 0.9;
-        }
+input[type=date]:focus{
+outline:2px solid rgba(22,160,133,.18);
+border-color:var(--accent);
+}
 
-        .reset {
-            margin-top: 10px;
-            background: #6b7280;
-        }
+.buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-top:15px;
+}
 
-        .result {
-            display: none;
-            margin-top: 25px;
-            padding: 20px;
-            background: #f0fdf4;
-            border-radius: 12px;
-            text-align: center;
-        }
+button{
+border:0;
+border-radius:10px;
+padding:14px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.2s;
+}
 
-        .result h3 {
-            color: #166534;
-            margin-bottom: 15px;
-        }
+.primary{
+background:var(--primary);
+color:#fff;
+}
 
-        .age {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0f3d3e;
-            margin-bottom: 12px;
-        }
+.primary:hover{
+background:var(--primary-dark);
+}
 
-        .total-days {
-            color: #4b5563;
-            font-size: 14px;
-        }
+.secondary{
+background:#e9edef;
+color:#33494b;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px 10px;
-            color: #6b7280;
-            font-size: 13px;
-        }
+.secondary:hover{
+background:#dfe5e7;
+}
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 24px;
-            }
+.error{
+display:none;
+margin-top:12px;
+color:#b42318;
+background:#fff0ee;
+padding:10px;
+border-radius:8px;
+text-align:center;
+font-size:14px;
+}
 
-            .card {
-                padding: 20px;
-            }
-        }
-    </style>
+.result{
+display:none;
+margin-top:25px;
+}
+
+.result-box{
+background:var(--success);
+border-radius:16px;
+padding:23px;
+text-align:center;
+border:1px solid #d9f3e3;
+}
+
+.result-box h3{
+color:#137a4a;
+font-size:19px;
+margin-bottom:10px;
+}
+
+.age{
+font-size:29px;
+font-weight:800;
+color:var(--primary);
+line-height:1.45;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:14px;
+}
+
+.info{
+background:#f7f9fa;
+border:1px solid #e7ecec;
+border-radius:12px;
+padding:14px;
+text-align:center;
+}
+
+.info .label{
+font-size:12px;
+color:var(--muted);
+margin-bottom:5px;
+}
+
+.info .value{
+font-size:17px;
+font-weight:800;
+color:var(--primary);
+}
+
+.countdown{
+margin-top:14px;
+background:#fff8e8;
+border:1px solid #f5e3b8;
+border-radius:12px;
+padding:15px;
+text-align:center;
+}
+
+.countdown strong{
+display:block;
+color:#8a5a00;
+margin-bottom:5px;
+}
+
+.small{
+font-size:13px;
+color:var(--muted);
+margin-top:10px;
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:22px 10px 35px;
+color:var(--muted);
+font-size:13px;
+}
+
+@media(max-width:560px){
+.card{
+padding:21px;
+}
+
+.title{
+font-size:25px;
+}
+
+.buttons,
+.grid{
+grid-template-columns:1fr;
+}
+
+.age{
+font-size:24px;
+}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>BD Utility 🇧🇩</h1>
-    <p>Simple & Useful Tools for Everyone</p>
+<div class="logo">BD Utility <span>🇧🇩</span></div>
+<p>Simple & Useful Tools for Everyone</p>
 </header>
 
-<div class="container">
+<main class="container">
 
-    <div class="card">
+<section class="card">
 
-        <h2>🎂 Age Calculator</h2>
+<h1 class="title">🎂 Age Calculator</h1>
 
-        <p class="subtitle">
-            আপনার জন্মতারিখ দিন এবং আপনার সঠিক বয়স জানুন
-        </p>
+<p class="subtitle">
+আপনার সঠিক বয়স, পরবর্তী জন্মদিন ও আরও তথ্য জানুন
+</p>
 
-        <label for="dob">জন্মতারিখ / Date of Birth</label>
+<label for="dob">
+জন্মতারিখ / Date of Birth
+</label>
 
-        <input type="date" id="dob">
+<input type="date" id="dob">
 
-        <button onclick="calculateAge()">
-            Calculate Age
-        </button>
+<div class="buttons">
 
-        <button class="reset" onclick="resetCalculator()">
-            Reset
-        </button>
+<button class="primary" onclick="calculateAge()">
+Calculate Age
+</button>
 
-        <div class="result" id="result">
-
-            <h3>আপনার বয়স</h3>
-
-            <div class="age" id="ageResult"></div>
-
-            <div class="total-days" id="daysResult"></div>
-
-        </div>
-
-    </div>
+<button class="secondary" onclick="resetCalculator()">
+Reset
+</button>
 
 </div>
 
+<div class="error" id="error"></div>
+
+<div class="result" id="result">
+
+<div class="result-box">
+
+<h3>আপনার বর্তমান বয়স</h3>
+
+<div class="age" id="ageResult"></div>
+
+</div>
+
+<div class="grid">
+
+<div class="info">
+<div class="label">জন্মবার / Birth Day</div>
+<div class="value" id="birthWeekday"></div>
+</div>
+
+<div class="info">
+<div class="label">মোট দিন / Total Days</div>
+<div class="value" id="totalDays"></div>
+</div>
+
+<div class="info">
+<div class="label">মোট সপ্তাহ / Total Weeks</div>
+<div class="value" id="totalWeeks"></div>
+</div>
+
+<div class="info">
+<div class="label">মোট মাস / Completed Months</div>
+<div class="value" id="totalMonths"></div>
+</div>
+
+</div>
+
+<div class="countdown">
+
+<strong>🎉 পরবর্তী জন্মদিন</strong>
+
+<span id="nextBirthday"></span>
+
+</div>
+
+<p class="small" id="updated"></p>
+
+</div>
+
+</section>
+
+</main>
+
 <footer>
-    © 2026 BD Utility · Free Online Tools
+© 2026 BD Utility · Free Online Tools
 </footer>
 
 <script>
 
-function calculateAge() {
+const bnDays=[
+"রবিবার",
+"সোমবার",
+"মঙ্গলবার",
+"বুধবার",
+"বৃহস্পতিবার",
+"শুক্রবার",
+"শনিবার"
+];
 
-    const dobInput = document.getElementById("dob").value;
+function localDateFromInput(value){
 
-    if (!dobInput) {
-        alert("দয়া করে আপনার জন্মতারিখ নির্বাচন করুন।");
-        return;
-    }
+const [y,m,d]=value.split("-").map(Number);
 
-    const birthDate = new Date(dobInput);
-    const today = new Date();
+return new Date(y,m-1,d);
 
-    if (birthDate > today) {
-        alert("জন্মতারিখ ভবিষ্যতের হতে পারে না।");
-        return;
-    }
-
-    let years = today.getFullYear() - birthDate.getFullYear();
-    let months = today.getMonth() - birthDate.getMonth();
-    let days = today.getDate() - birthDate.getDate();
-
-    if (days < 0) {
-        months--;
-
-        const previousMonth = new Date(
-            today.getFullYear(),
-            today.getMonth(),
-            0
-        );
-
-        days += previousMonth.getDate();
-    }
-
-    if (months < 0) {
-        years--;
-        months += 12;
-    }
-
-    const difference = today - birthDate;
-
-    const totalDays = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
-
-    document.getElementById("ageResult").innerHTML =
-        years + " বছর " +
-        months + " মাস " +
-        days + " দিন";
-
-    document.getElementById("daysResult").innerHTML =
-        "মোট প্রায় " + totalDays.toLocaleString() + " দিন";
-
-    document.getElementById("result").style.display = "block";
 }
 
+function daysInMonth(y,m){
 
-function resetCalculator() {
+return new Date(y,m+1,0).getDate();
 
-    document.getElementById("dob").value = "";
+}
 
-    document.getElementById("result").style.display = "none";
+function calculateAge(){
+
+const value=document.getElementById("dob").value;
+
+const error=document.getElementById("error");
+
+const result=document.getElementById("result");
+
+error.style.display="none";
+
+if(!value){
+
+showError("দয়া করে আপনার জন্মতারিখ নির্বাচন করুন।");
+
+return;
+
+}
+
+const birth=localDateFromInput(value);
+
+const today=new Date();
+
+today.setHours(0,0,0,0);
+
+if(birth>today){
+
+showError("জন্মতারিখ ভবিষ্যতের হতে পারে না।");
+
+return;
+
+}
+
+let years=today.getFullYear()-birth.getFullYear();
+
+let months=today.getMonth()-birth.getMonth();
+
+let days=today.getDate()-birth.getDate();
+
+if(days<0){
+
+months--;
+
+days+=daysInMonth(
+today.getFullYear(),
+today.getMonth()-1
+);
+
+}
+
+if(months<0){
+
+years--;
+
+months+=12;
+
+}
+
+const msPerDay=86400000;
+
+const totalDays=Math.floor(
+(today-birth)/msPerDay
+);
+
+const totalWeeks=Math.floor(totalDays/7);
+
+const totalMonths=years*12+months;
+
+document.getElementById("ageResult").textContent=
+`${years} বছর ${months} মাস ${days} দিন`;
+
+document.getElementById("birthWeekday").textContent=
+bnDays[birth.getDay()];
+
+document.getElementById("totalDays").textContent=
+totalDays.toLocaleString("bn-BD");
+
+document.getElementById("totalWeeks").textContent=
+totalWeeks.toLocaleString("bn-BD");
+
+document.getElementById("totalMonths").textContent=
+totalMonths.toLocaleString("bn-BD");
+
+const next=new Date(
+today.getFullYear(),
+birth.getMonth(),
+birth.getDate()
+);
+
+if(next<today){
+
+next.setFullYear(
+today.getFullYear()+1
+);
+
+}
+
+const daysUntil=Math.ceil(
+(next-today)/msPerDay
+);
+
+if(daysUntil===0){
+
+document.getElementById("nextBirthday").textContent=
+"আজ আপনার জন্মদিন! 🎂🎉";
+
+}else{
+
+document.getElementById("nextBirthday").textContent=
+`আর ${daysUntil.toLocaleString("bn-BD")} দিন বাকি`;
+
+}
+
+document.getElementById("updated").textContent=
+`হিসাব করা হয়েছে: ${today.toLocaleDateString("bn-BD")}`;
+
+result.style.display="block";
+
+}
+
+function showError(message){
+
+const error=document.getElementById("error");
+
+error.textContent=message;
+
+error.style.display="block";
+
+document.getElementById("result").style.display="none";
+
+}
+
+function resetCalculator(){
+
+document.getElementById("dob").value="";
+
+document.getElementById("result").style.display="none";
+
+document.getElementById("error").style.display="none";
+
 }
 
 </script>
