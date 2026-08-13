@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free Date Calculator - Calculate date difference, add days and subtract days easily.">
+<meta name="description" content="Free Date Calculator to calculate days between two dates, add or subtract days, and find date differences in years, months and days.">
 
-<title>Date Calculator | BD Utility</title>
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/date-calculator.html">
+
+<meta property="og:title" content="Date Calculator – Days Between Dates | BD Utility">
+
+<meta property="og:description" content="Calculate days between two dates, add days, subtract days, and find date differences easily with our free online Date Calculator.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/date-calculator.html">
+
+<title>Date Calculator – Days Between Dates | BD Utility</title>
+
 
 <style>
 
@@ -59,12 +74,34 @@ header p{
 .top h1{
     color:#0f4c4c;
     font-size:29px;
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 .top p{
     color:#687b7d;
     font-size:14px;
+    line-height:1.7;
+}
+
+.intro{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:22px;
+    box-shadow:0 5px 18px rgba(15,76,76,.05);
+}
+
+.intro h2{
+    color:#0f4c4c;
+    font-size:19px;
+    margin-bottom:9px;
+}
+
+.intro p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.7;
 }
 
 .card{
@@ -86,7 +123,7 @@ header p{
     color:#718082;
     font-size:13px;
     margin-bottom:20px;
-    line-height:1.5;
+    line-height:1.6;
 }
 
 .input-row{
@@ -154,6 +191,40 @@ button:hover{
     color:#587071;
 }
 
+.info-section{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:15px;
+    padding:22px;
+    margin-top:25px;
+}
+
+.info-section h2{
+    color:#0f4c4c;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.info-section h3{
+    color:#173235;
+    font-size:16px;
+    margin-top:18px;
+    margin-bottom:7px;
+}
+
+.info-section p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.info-section ul{
+    margin-left:20px;
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.9;
+}
+
 .back{
     display:block;
     text-align:center;
@@ -195,9 +266,12 @@ footer{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -212,32 +286,54 @@ footer{
 </header>
 
 
-<div class="container">
+
+<main class="container">
 
 
-    <div class="top">
+    <section class="top">
 
         <h1>
-            Date Calculator
+            Date Calculator – Days Between Dates
         </h1>
 
         <p>
-            তারিখের পার্থক্য এবং তারিখ যোগ-বিয়োগ সহজে হিসাব করুন।
+            দুটি তারিখের মধ্যে পার্থক্য বের করুন এবং
+            সহজেই তারিখের সাথে দিন যোগ বা বিয়োগ করুন।
         </p>
 
-    </div>
+    </section>
+
+
+
+    <section class="intro">
+
+        <h2>
+            Free Online Date Calculator
+        </h2>
+
+        <p>
+            এই Date Calculator ব্যবহার করে দুটি তারিখের
+            মধ্যে মোট কত দিন, কত বছর, কত মাস এবং কত দিন
+            পার্থক্য রয়েছে তা হিসাব করতে পারবেন।
+            এছাড়া কোনো তারিখের সাথে নির্দিষ্ট সংখ্যক দিন
+            যোগ বা বিয়োগ করে নতুন তারিখও বের করা যাবে।
+        </p>
+
+    </section>
+
 
 
     <!-- DATE DIFFERENCE -->
 
-    <div class="card">
+    <section class="card">
 
         <h2>
             ① Date Difference
         </h2>
 
         <p class="desc">
-            দুটি তারিখের মধ্যে কত বছর, মাস, দিন এবং মোট কত দিন পার্থক্য তা হিসাব করুন।
+            দুটি তারিখের মধ্যে কত বছর, মাস, দিন এবং
+            মোট কত দিন পার্থক্য তা হিসাব করুন।
         </p>
 
 
@@ -245,7 +341,7 @@ footer{
 
             <div>
 
-                <label>
+                <label for="startDate">
                     প্রথম তারিখ
                 </label>
 
@@ -259,7 +355,7 @@ footer{
 
             <div>
 
-                <label>
+                <label for="endDate">
                     দ্বিতীয় তারিখ
                 </label>
 
@@ -283,20 +379,21 @@ footer{
             id="differenceResult"
         ></div>
 
-    </div>
+    </section>
 
 
 
     <!-- ADD DAYS -->
 
-    <div class="card">
+    <section class="card">
 
         <h2>
             ② Add Days
         </h2>
 
         <p class="desc">
-            একটি তারিখের সাথে নির্দিষ্ট সংখ্যক দিন যোগ করে নতুন তারিখ বের করুন।
+            একটি তারিখের সাথে নির্দিষ্ট সংখ্যক দিন
+            যোগ করে নতুন তারিখ বের করুন।
         </p>
 
 
@@ -304,7 +401,7 @@ footer{
 
             <div>
 
-                <label>
+                <label for="addDate">
                     তারিখ
                 </label>
 
@@ -318,7 +415,7 @@ footer{
 
             <div>
 
-                <label>
+                <label for="daysToAdd">
                     কত দিন যোগ করবেন?
                 </label>
 
@@ -344,20 +441,21 @@ footer{
             id="addResult"
         ></div>
 
-    </div>
+    </section>
 
 
 
     <!-- SUBTRACT DAYS -->
 
-    <div class="card">
+    <section class="card">
 
         <h2>
             ③ Subtract Days
         </h2>
 
         <p class="desc">
-            একটি তারিখ থেকে নির্দিষ্ট সংখ্যক দিন বাদ দিয়ে নতুন তারিখ বের করুন।
+            একটি তারিখ থেকে নির্দিষ্ট সংখ্যক দিন বাদ দিয়ে
+            নতুন তারিখ বের করুন।
         </p>
 
 
@@ -365,7 +463,7 @@ footer{
 
             <div>
 
-                <label>
+                <label for="subtractDate">
                     তারিখ
                 </label>
 
@@ -379,7 +477,7 @@ footer{
 
             <div>
 
-                <label>
+                <label for="daysToSubtract">
                     কত দিন বাদ দেবেন?
                 </label>
 
@@ -405,7 +503,70 @@ footer{
             id="subtractResult"
         ></div>
 
-    </div>
+    </section>
+
+
+
+    <!-- SEO INFORMATION -->
+
+    <section class="info-section">
+
+        <h2>
+            About Date Calculator
+        </h2>
+
+        <p>
+            Date Calculator একটি সহজ অনলাইন টুল যা
+            দুইটি তারিখের মধ্যকার সময়ের পার্থক্য বের করতে
+            সাহায্য করে। আপনি চাইলে একটি নির্দিষ্ট তারিখের
+            সাথে দিন যোগ অথবা দিন বিয়োগ করেও নতুন তারিখ
+            বের করতে পারবেন।
+        </p>
+
+
+        <h3>
+            What can you calculate?
+        </h3>
+
+        <ul>
+
+            <li>
+                Days between two dates
+            </li>
+
+            <li>
+                Years, months and days between dates
+            </li>
+
+            <li>
+                Add days to a date
+            </li>
+
+            <li>
+                Subtract days from a date
+            </li>
+
+            <li>
+                Total number of days between two dates
+            </li>
+
+        </ul>
+
+
+        <h3>
+            How to use the Date Calculator
+        </h3>
+
+        <p>
+            দুটি তারিখের পার্থক্য জানতে প্রথমে প্রথম
+            এবং দ্বিতীয় তারিখ নির্বাচন করুন। এরপর
+            Calculate Difference চাপুন। কোনো তারিখের
+            সাথে দিন যোগ বা বিয়োগ করতে সংশ্লিষ্ট
+            তারিখ এবং দিনের সংখ্যা দিয়ে Calculate করুন।
+        </p>
+
+    </section>
+
 
 
     <a
@@ -416,7 +577,8 @@ footer{
     </a>
 
 
-</div>
+</main>
+
 
 
 <footer>
@@ -452,34 +614,46 @@ function calculateDifference(){
     }
 
 
-    let start = new Date(startInput + "T00:00:00");
-    let end = new Date(endInput + "T00:00:00");
+    let start =
+        new Date(startInput + "T00:00:00");
+
+    let end =
+        new Date(endInput + "T00:00:00");
 
 
     if(start > end){
 
         const temp = start;
-        start = end;
-        end = temp;
 
+        start = end;
+
+        end = temp;
     }
 
 
     const milliseconds =
         end.getTime() - start.getTime();
 
+
     const totalDays =
-        Math.round(milliseconds / 86400000);
+        Math.round(
+            milliseconds / 86400000
+        );
 
 
     let years =
-        end.getFullYear() - start.getFullYear();
+        end.getFullYear() -
+        start.getFullYear();
+
 
     let months =
-        end.getMonth() - start.getMonth();
+        end.getMonth() -
+        start.getMonth();
+
 
     let days =
-        end.getDate() - start.getDate();
+        end.getDate() -
+        start.getDate();
 
 
     if(days < 0){
@@ -494,15 +668,14 @@ function calculateDifference(){
             );
 
         days += previousMonth.getDate();
-
     }
 
 
     if(months < 0){
 
         years--;
-        months += 12;
 
+        months += 12;
     }
 
 
@@ -523,6 +696,7 @@ function addDays(){
     const dateInput =
         document.getElementById("addDate").value;
 
+
     const days =
         parseInt(
             document.getElementById("daysToAdd").value
@@ -541,7 +715,9 @@ function addDays(){
 
 
     const date =
-        new Date(dateInput + "T00:00:00");
+        new Date(
+            dateInput + "T00:00:00"
+        );
 
 
     date.setDate(
@@ -565,6 +741,7 @@ function subtractDays(){
     const dateInput =
         document.getElementById("subtractDate").value;
 
+
     const days =
         parseInt(
             document.getElementById("daysToSubtract").value
@@ -583,7 +760,9 @@ function subtractDays(){
 
 
     const date =
-        new Date(dateInput + "T00:00:00");
+        new Date(
+            dateInput + "T00:00:00"
+        );
 
 
     date.setDate(
@@ -605,10 +784,16 @@ function subtractDays(){
 function formatDate(date){
 
     const day =
-        String(date.getDate()).padStart(2,"0");
+        String(
+            date.getDate()
+        ).padStart(2,"0");
+
 
     const month =
-        String(date.getMonth() + 1).padStart(2,"0");
+        String(
+            date.getMonth() + 1
+        ).padStart(2,"0");
+
 
     const year =
         date.getFullYear();
@@ -628,13 +813,18 @@ function showResult(id,html){
     const result =
         document.getElementById(id);
 
-    result.innerHTML = html;
 
-    result.style.display = "block";
+    result.innerHTML =
+        html;
+
+
+    result.style.display =
+        "block";
 
 }
 
 </script>
+
 
 </body>
 </html>
