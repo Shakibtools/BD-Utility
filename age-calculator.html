@@ -1,14 +1,38 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BD Utility Age Calculator - Calculate your exact age, next birthday and more.">
+
+<meta name="description" content="বয়স ক্যালকুলেটর দিয়ে জন্মতারিখ থেকে সঠিক বয়স কত বছর, মাস ও দিন হিসাব করুন। Calculate exact age, total days, weeks, months, birth day and next birthday with BD Utility.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/age-calculator.html">
+
+<meta property="og:title" content="Age Calculator – বয়স হিসাব করুন | BD Utility">
+
+<meta property="og:description" content="জন্মতারিখ থেকে আপনার সঠিক বয়স কত বছর, মাস ও দিন হিসাব করুন। মোট দিন, সপ্তাহ, মাস, জন্মবার এবং পরবর্তী জন্মদিনের হিসাবও দেখুন।">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/age-calculator.html">
+
 <meta name="theme-color" content="#0f4c4c">
-<title>BD Utility | Age Calculator</title>
+
+<title>Age Calculator – বয়স হিসাব করুন | BD Utility</title>
+
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
 
 :root{
 --primary:#0f4c4c;
@@ -69,6 +93,7 @@ box-shadow:0 12px 35px rgba(15,76,76,.10);
 text-align:center;
 color:var(--primary);
 font-size:30px;
+line-height:1.4;
 }
 
 .subtitle{
@@ -76,6 +101,27 @@ text-align:center;
 color:var(--muted);
 margin:8px 0 25px;
 font-size:15px;
+line-height:1.7;
+}
+
+.intro{
+background:#f7f9fa;
+border:1px solid #e7ecec;
+border-radius:14px;
+padding:18px;
+margin-bottom:23px;
+}
+
+.intro h2{
+color:var(--primary);
+font-size:19px;
+margin-bottom:8px;
+}
+
+.intro p{
+color:var(--muted);
+font-size:14px;
+line-height:1.8;
 }
 
 label{
@@ -220,6 +266,50 @@ margin-top:10px;
 text-align:center;
 }
 
+.info-section{
+margin-top:25px;
+background:#fff;
+border:1px solid var(--border);
+border-radius:16px;
+padding:22px;
+}
+
+.info-section h2{
+color:var(--primary);
+font-size:20px;
+margin-bottom:10px;
+}
+
+.info-section h3{
+color:var(--text);
+font-size:16px;
+margin-top:18px;
+margin-bottom:7px;
+}
+
+.info-section p{
+color:var(--muted);
+font-size:14px;
+line-height:1.8;
+}
+
+.info-section ul{
+margin-left:20px;
+color:var(--muted);
+font-size:14px;
+line-height:1.9;
+}
+
+.back{
+display:block;
+text-align:center;
+margin:25px 0 0;
+color:var(--primary);
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+}
+
 footer{
 text-align:center;
 padding:22px 10px 35px;
@@ -228,6 +318,7 @@ font-size:13px;
 }
 
 @media(max-width:560px){
+
 .card{
 padding:21px;
 }
@@ -244,104 +335,321 @@ grid-template-columns:1fr;
 .age{
 font-size:24px;
 }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
-<div class="logo">BD Utility <span>🇧🇩</span></div>
-<p>Simple & Useful Tools for Everyone</p>
+
+<div class="logo">
+BD Utility <span>🇧🇩</span>
+</div>
+
+<p>
+Simple &amp; Useful Tools for Everyone
+</p>
+
 </header>
+
+
 
 <main class="container">
 
+
 <section class="card">
 
-<h1 class="title">🎂 Age Calculator</h1>
+
+<h1 class="title">
+🎂 Age Calculator – বয়স ক্যালকুলেটর
+</h1>
+
 
 <p class="subtitle">
-আপনার সঠিক বয়স, পরবর্তী জন্মদিন ও আরও তথ্য জানুন
+জন্মতারিখ থেকে আপনার সঠিক বয়স হিসাব করুন
 </p>
+
+
+
+<div class="intro">
+
+<h2>
+Free Online Age Calculator | বয়স হিসাব করার ক্যালকুলেটর
+</h2>
+
+<p>
+জন্মতারিখ দিয়ে আপনার সঠিক বয়স কত বছর, কত মাস ও কত দিন
+হয়েছে তা সহজে হিসাব করুন। এই বয়স ক্যালকুলেটর দিয়ে মোট
+দিন, মোট সপ্তাহ, সম্পূর্ণ মাস, জন্মবার এবং পরবর্তী জন্মদিন
+আসতে কত দিন বাকি রয়েছে তাও জানা যাবে।
+</p>
+
+</div>
+
+
 
 <label for="dob">
 জন্মতারিখ / Date of Birth
 </label>
 
-<input type="date" id="dob">
+<input
+type="date"
+id="dob"
+>
+
 
 <div class="buttons">
 
-<button class="primary" onclick="calculateAge()">
+<button
+class="primary"
+onclick="calculateAge()"
+>
 Calculate Age
 </button>
 
-<button class="secondary" onclick="resetCalculator()">
+<button
+class="secondary"
+onclick="resetCalculator()"
+>
 Reset
 </button>
 
 </div>
 
-<div class="error" id="error"></div>
 
-<div class="result" id="result">
+<div
+class="error"
+id="error"
+></div>
+
+
+
+<div
+class="result"
+id="result"
+>
+
 
 <div class="result-box">
 
-<h3>আপনার বর্তমান বয়স</h3>
+<h3>
+আপনার বর্তমান বয়স / Your Exact Age
+</h3>
 
-<div class="age" id="ageResult"></div>
+<div
+class="age"
+id="ageResult"
+></div>
 
 </div>
+
+
 
 <div class="grid">
 
-<div class="info">
-<div class="label">জন্মবার / Birth Day</div>
-<div class="value" id="birthWeekday"></div>
-</div>
 
 <div class="info">
-<div class="label">মোট দিন / Total Days</div>
-<div class="value" id="totalDays"></div>
+
+<div class="label">
+জন্মবার / Birth Day
 </div>
+
+<div
+class="value"
+id="birthWeekday"
+></div>
+
+</div>
+
+
 
 <div class="info">
-<div class="label">মোট সপ্তাহ / Total Weeks</div>
-<div class="value" id="totalWeeks"></div>
+
+<div class="label">
+মোট দিন / Total Days
 </div>
+
+<div
+class="value"
+id="totalDays"
+></div>
+
+</div>
+
+
 
 <div class="info">
-<div class="label">মোট মাস / Completed Months</div>
-<div class="value" id="totalMonths"></div>
+
+<div class="label">
+মোট সপ্তাহ / Total Weeks
 </div>
 
+<div
+class="value"
+id="totalWeeks"
+></div>
+
 </div>
+
+
+
+<div class="info">
+
+<div class="label">
+মোট মাস / Completed Months
+</div>
+
+<div
+class="value"
+id="totalMonths"
+></div>
+
+</div>
+
+
+</div>
+
+
 
 <div class="countdown">
 
-<strong>🎉 পরবর্তী জন্মদিন</strong>
+<strong>
+🎉 পরবর্তী জন্মদিন / Next Birthday
+</strong>
 
 <span id="nextBirthday"></span>
 
 </div>
 
-<p class="small" id="updated"></p>
+
+<p
+class="small"
+id="updated"
+></p>
+
 
 </div>
 
+
 </section>
+
+
+
+<section class="info-section">
+
+
+<h2>
+বয়স ক্যালকুলেটর সম্পর্কে
+</h2>
+
+
+<p>
+Age Calculator বা বয়স ক্যালকুলেটর হলো একটি সহজ অনলাইন
+টুল যার মাধ্যমে জন্মতারিখ থেকে বর্তমান বয়স হিসাব করা যায়।
+আপনি জানতে পারবেন আপনার বয়স কত বছর, কত মাস এবং কত দিন।
+এছাড়াও মোট কত দিন ও সপ্তাহ হয়েছে এবং পরবর্তী জন্মদিন
+আসতে কত দিন বাকি তাও জানতে পারবেন।
+</p>
+
+
+
+<h3>
+এই Age Calculator দিয়ে কী হিসাব করা যায়?
+</h3>
+
+
+<ul>
+
+<li>
+সঠিক বয়স কত বছর, মাস ও দিন
+</li>
+
+<li>
+জন্মতারিখ থেকে মোট কত দিন হয়েছে
+</li>
+
+<li>
+মোট কত সপ্তাহ সম্পূর্ণ হয়েছে
+</li>
+
+<li>
+মোট কত মাস সম্পূর্ণ হয়েছে
+</li>
+
+<li>
+কোন বার জন্ম হয়েছে
+</li>
+
+<li>
+পরবর্তী জন্মদিন আসতে কত দিন বাকি
+</li>
+
+</ul>
+
+
+
+<h3>
+বয়স হিসাব করার নিয়ম
+</h3>
+
+
+<p>
+প্রথমে আপনার জন্মতারিখ নির্বাচন করুন। এরপর
+Calculate Age বাটনে ক্লিক করুন। Calculator আপনার
+বর্তমান বয়স বছর, মাস ও দিনের হিসাবে দেখাবে।
+সাথে মোট দিন, সপ্তাহ, মাস, জন্মবার এবং পরবর্তী
+জন্মদিনের তথ্যও দেখাবে।
+</p>
+
+
+
+<h3>
+কেন BD Utility Age Calculator ব্যবহার করবেন?
+</h3>
+
+
+<p>
+এটি একটি সহজ, দ্রুত এবং বিনামূল্যের অনলাইন বয়স
+ক্যালকুলেটর। কোনো অ্যাপ ইনস্টল করার প্রয়োজন নেই।
+মোবাইল ও কম্পিউটার উভয় ডিভাইস থেকেই ব্যবহার করা যায়।
+</p>
+
+
+</section>
+
+
+
+<a
+href="index.html"
+class="back"
+>
+← Back to Homepage
+</a>
+
 
 </main>
 
+
+
 <footer>
+
 © 2026 BD Utility · Free Online Tools
+
 </footer>
+
+
 
 <script>
 
+
 const bnDays=[
+
 "রবিবার",
 "সোমবার",
 "মঙ্গলবার",
@@ -349,109 +657,187 @@ const bnDays=[
 "বৃহস্পতিবার",
 "শুক্রবার",
 "শনিবার"
+
 ];
+
+
 
 function localDateFromInput(value){
 
-const [y,m,d]=value.split("-").map(Number);
+const [y,m,d]=value
+.split("-")
+.map(Number);
 
-return new Date(y,m-1,d);
+return new Date(
+y,
+m-1,
+d
+);
 
 }
+
+
 
 function daysInMonth(y,m){
 
-return new Date(y,m+1,0).getDate();
+return new Date(
+y,
+m+1,
+0
+).getDate();
 
 }
+
+
 
 function calculateAge(){
 
-const value=document.getElementById("dob").value;
+const value =
+document.getElementById("dob").value;
 
-const error=document.getElementById("error");
+const error =
+document.getElementById("error");
 
-const result=document.getElementById("result");
+const result =
+document.getElementById("result");
+
 
 error.style.display="none";
 
+
 if(!value){
 
-showError("দয়া করে আপনার জন্মতারিখ নির্বাচন করুন।");
+showError(
+"দয়া করে আপনার জন্মতারিখ নির্বাচন করুন।"
+);
 
 return;
 
 }
 
-const birth=localDateFromInput(value);
 
-const today=new Date();
+const birth =
+localDateFromInput(value);
 
-today.setHours(0,0,0,0);
+
+const today =
+new Date();
+
+today.setHours(
+0,
+0,
+0,
+0
+);
+
 
 if(birth>today){
 
-showError("জন্মতারিখ ভবিষ্যতের হতে পারে না।");
+showError(
+"জন্মতারিখ ভবিষ্যতের হতে পারে না।"
+);
 
 return;
 
 }
 
-let years=today.getFullYear()-birth.getFullYear();
 
-let months=today.getMonth()-birth.getMonth();
+let years =
+today.getFullYear() -
+birth.getFullYear();
 
-let days=today.getDate()-birth.getDate();
+
+let months =
+today.getMonth() -
+birth.getMonth();
+
+
+let days =
+today.getDate() -
+birth.getDate();
+
 
 if(days<0){
 
 months--;
 
-days+=daysInMonth(
+days += daysInMonth(
 today.getFullYear(),
 today.getMonth()-1
 );
 
 }
 
+
 if(months<0){
 
 years--;
 
-months+=12;
+months += 12;
 
 }
 
-const msPerDay=86400000;
 
-const totalDays=Math.floor(
+const msPerDay =
+86400000;
+
+
+const totalDays =
+Math.floor(
 (today-birth)/msPerDay
 );
 
-const totalWeeks=Math.floor(totalDays/7);
 
-const totalMonths=years*12+months;
+const totalWeeks =
+Math.floor(
+totalDays/7
+);
 
-document.getElementById("ageResult").textContent=
+
+const totalMonths =
+years*12+months;
+
+
+document.getElementById(
+"ageResult"
+).textContent =
 `${years} বছর ${months} মাস ${days} দিন`;
 
-document.getElementById("birthWeekday").textContent=
-bnDays[birth.getDay()];
 
-document.getElementById("totalDays").textContent=
+document.getElementById(
+"birthWeekday"
+).textContent =
+bnDays[
+birth.getDay()
+];
+
+
+document.getElementById(
+"totalDays"
+).textContent =
 totalDays.toLocaleString("bn-BD");
 
-document.getElementById("totalWeeks").textContent=
+
+document.getElementById(
+"totalWeeks"
+).textContent =
 totalWeeks.toLocaleString("bn-BD");
 
-document.getElementById("totalMonths").textContent=
+
+document.getElementById(
+"totalMonths"
+).textContent =
 totalMonths.toLocaleString("bn-BD");
 
-const next=new Date(
+
+
+const next =
+new Date(
 today.getFullYear(),
 birth.getMonth(),
 birth.getDate()
 );
+
 
 if(next<today){
 
@@ -461,52 +847,86 @@ today.getFullYear()+1
 
 }
 
-const daysUntil=Math.ceil(
+
+const daysUntil =
+Math.ceil(
 (next-today)/msPerDay
 );
 
+
 if(daysUntil===0){
 
-document.getElementById("nextBirthday").textContent=
+document.getElementById(
+"nextBirthday"
+).textContent =
 "আজ আপনার জন্মদিন! 🎂🎉";
 
 }else{
 
-document.getElementById("nextBirthday").textContent=
+document.getElementById(
+"nextBirthday"
+).textContent =
 `আর ${daysUntil.toLocaleString("bn-BD")} দিন বাকি`;
 
 }
 
-document.getElementById("updated").textContent=
+
+document.getElementById(
+"updated"
+).textContent =
 `হিসাব করা হয়েছে: ${today.toLocaleDateString("bn-BD")}`;
+
 
 result.style.display="block";
 
 }
 
+
+
 function showError(message){
 
-const error=document.getElementById("error");
+const error =
+document.getElementById("error");
 
-error.textContent=message;
 
-error.style.display="block";
+error.textContent =
+message;
 
-document.getElementById("result").style.display="none";
+
+error.style.display =
+"block";
+
+
+document.getElementById(
+"result"
+).style.display =
+"none";
 
 }
 
+
+
 function resetCalculator(){
 
-document.getElementById("dob").value="";
+document.getElementById(
+"dob"
+).value="";
 
-document.getElementById("result").style.display="none";
 
-document.getElementById("error").style.display="none";
+document.getElementById(
+"result"
+).style.display="none";
+
+
+document.getElementById(
+"error"
+).style.display="none";
 
 }
 
 </script>
 
+
 </body>
 </html>
+```
