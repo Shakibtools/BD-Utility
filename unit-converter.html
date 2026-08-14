@@ -1,12 +1,30 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free Unit Converter by BD Utility. Convert length, weight, temperature, area, volume and time units easily.">
+<meta name="description" content="Free Unit Converter বা একক রূপান্তর ক্যালকুলেটর। Length, Weight, Temperature, Area, Volume এবং Time সহজে Convert করুন। মিটার, কিলোমিটার, কেজি, গ্রাম, সেলসিয়াস, লিটার ও আরও অনেক unit রূপান্তর করুন।">
 
-<title>Unit Converter | BD Utility</title>
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/unit-converter.html">
+
+<meta property="og:title" content="Unit Converter – একক রূপান্তর ক্যালকুলেটর | BD Utility">
+
+<meta property="og:description" content="Length, Weight, Temperature, Area, Volume এবং Time-এর unit সহজে convert করুন। Free Online Unit Converter.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/unit-converter.html">
+
+<meta name="theme-color" content="#0f4c4c">
+
+<title>Unit Converter – একক রূপান্তর ক্যালকুলেটর | BD Utility</title>
+
 
 <style>
 
@@ -47,25 +65,48 @@ header p{
 
 .container{
     width:92%;
-    max-width:650px;
+    max-width:700px;
     margin:35px auto 50px;
 }
 
 .title{
     text-align:center;
-    margin-bottom:28px;
+    margin-bottom:25px;
 }
 
 .title h1{
     color:#0f4c4c;
     font-size:29px;
     margin-bottom:8px;
+    line-height:1.45;
 }
 
 .title p{
     color:#687b7d;
     font-size:14px;
-    line-height:1.6;
+    line-height:1.7;
+}
+
+.intro{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:22px;
+    box-shadow:0 5px 18px rgba(15,76,76,.05);
+}
+
+.intro h2{
+    color:#0f4c4c;
+    font-size:20px;
+    margin-bottom:9px;
+    line-height:1.5;
+}
+
+.intro p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.8;
 }
 
 .converter{
@@ -148,12 +189,14 @@ input:focus{
     font-size:28px;
     font-weight:bold;
     word-break:break-word;
+    line-height:1.5;
 }
 
 .formula{
     margin-top:9px;
     color:#718082;
     font-size:12px;
+    line-height:1.6;
 }
 
 .quick{
@@ -186,6 +229,42 @@ input:focus{
 
 .quick button:hover{
     background:#e8f1f1;
+}
+
+.info-section{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:16px;
+    padding:22px;
+    margin-top:25px;
+}
+
+.info-section h2{
+    color:#0f4c4c;
+    font-size:20px;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.info-section h3{
+    color:#173235;
+    font-size:16px;
+    margin-top:18px;
+    margin-bottom:7px;
+    line-height:1.5;
+}
+
+.info-section p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.info-section ul{
+    margin-left:20px;
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.9;
 }
 
 .back{
@@ -237,9 +316,12 @@ footer{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -254,56 +336,79 @@ footer{
 </header>
 
 
-<div class="container">
 
-    <div class="title">
+<main class="container">
+
+
+    <section class="title">
 
         <h1>
-            Unit Converter
+            Unit Converter – একক রূপান্তর ক্যালকুলেটর
         </h1>
 
         <p>
-            Length, Weight, Temperature, Area, Volume এবং Time সহজে Convert করুন।
+            Length, Weight, Temperature, Area, Volume এবং Time সহজে Convert করুন
         </p>
 
-    </div>
+    </section>
 
 
-    <div class="converter">
+
+    <section class="intro">
+
+        <h2>
+            Free Online Unit Converter | একক রূপান্তর
+        </h2>
+
+        <p>
+            এই Unit Converter ব্যবহার করে বিভিন্ন ধরনের unit বা
+            একক দ্রুত রূপান্তর করতে পারবেন। Meter থেকে Kilometer,
+            Kilogram থেকে Gram, Celsius থেকে Fahrenheit, Liter থেকে
+            Milliliter এবং Second থেকে Hour-এর মতো conversion
+            সহজেই করা যায়। এটি মোবাইল ও কম্পিউটারে বিনামূল্যে
+            ব্যবহার করা যায়।
+        </p>
+
+    </section>
 
 
-        <!-- CATEGORY -->
+
+    <section class="converter">
+
 
         <div class="category-box">
 
-            <label>
-                Select Category
+            <label for="category">
+                Select Category / এককের ধরন নির্বাচন করুন
             </label>
 
-            <select id="category" onchange="changeCategory()">
+            <select
+                id="category"
+                onchange="changeCategory()"
+            >
 
                 <option value="length">
-                    📏 Length
+                    📏 Length / দৈর্ঘ্য
                 </option>
 
                 <option value="weight">
-                    ⚖️ Weight
+                    ⚖️ Weight / ওজন
                 </option>
 
                 <option value="temperature">
-                    🌡️ Temperature
+                    🌡️ Temperature / তাপমাত্রা
                 </option>
 
                 <option value="area">
-                    📐 Area
+                    📐 Area / ক্ষেত্রফল
                 </option>
 
                 <option value="volume">
-                    🧴 Volume
+                    🧴 Volume / আয়তন
                 </option>
 
                 <option value="time">
-                    ⏱️ Time
+                    ⏱️ Time / সময়
                 </option>
 
             </select>
@@ -311,15 +416,14 @@ footer{
         </div>
 
 
-        <!-- CONVERTER -->
 
         <div class="convert-row">
 
 
             <div>
 
-                <label>
-                    From
+                <label for="inputValue">
+                    Value / মান
                 </label>
 
                 <input
@@ -330,6 +434,11 @@ footer{
                     oninput="convert()"
                 >
 
+
+                <label for="fromUnit" style="margin-top:10px;">
+                    From / যেখান থেকে
+                </label>
+
                 <select
                     id="fromUnit"
                     onchange="convert()"
@@ -338,19 +447,22 @@ footer{
             </div>
 
 
+
             <button
                 class="swap"
                 onclick="swapUnits()"
                 title="Swap Units"
+                aria-label="Swap Units"
             >
                 ⇄
             </button>
 
 
+
             <div>
 
-                <label>
-                    To
+                <label for="toUnit">
+                    To / যেখানে রূপান্তর করবেন
                 </label>
 
                 <select
@@ -363,12 +475,11 @@ footer{
         </div>
 
 
-        <!-- RESULT -->
 
         <div class="result-box">
 
             <div class="result-label">
-                Result
+                Result / ফলাফল
             </div>
 
             <div
@@ -386,12 +497,11 @@ footer{
         </div>
 
 
-        <!-- QUICK VALUES -->
 
         <div class="quick">
 
             <h3>
-                Quick Values
+                Quick Values / দ্রুত মান নির্বাচন
             </h3>
 
             <div class="quick-grid">
@@ -424,7 +534,124 @@ footer{
 
         </div>
 
-    </div>
+    </section>
+
+
+
+    <section class="info-section">
+
+
+        <h2>
+            Unit Converter সম্পর্কে
+        </h2>
+
+        <p>
+            Unit Converter বা একক রূপান্তর ক্যালকুলেটর ব্যবহার করে
+            একটি unit-এর মান অন্য unit-এ পরিবর্তন করা যায়। দৈনন্দিন
+            কাজ, পড়াশোনা, বিজ্ঞান, ব্যবসা এবং সাধারণ হিসাবের ক্ষেত্রে
+            এই ধরনের conversion প্রয়োজন হতে পারে।
+        </p>
+
+
+
+        <h3>
+            Length Converter – দৈর্ঘ্য রূপান্তর
+        </h3>
+
+        <p>
+            Meter, Kilometer, Centimeter, Millimeter, Mile, Yard,
+            Foot এবং Inch-এর মধ্যে দৈর্ঘ্য রূপান্তর করুন।
+        </p>
+
+
+
+        <h3>
+            Weight Converter – ওজন রূপান্তর
+        </h3>
+
+        <p>
+            Kilogram, Gram, Milligram, Pound, Ounce এবং Metric Ton-এর
+            মধ্যে ওজনের একক পরিবর্তন করুন।
+        </p>
+
+
+
+        <h3>
+            Temperature Converter – তাপমাত্রা রূপান্তর
+        </h3>
+
+        <p>
+            Celsius, Fahrenheit এবং Kelvin-এর মধ্যে তাপমাত্রা
+            convert করুন।
+        </p>
+
+
+
+        <h3>
+            Area Converter – ক্ষেত্রফল রূপান্তর
+        </h3>
+
+        <p>
+            Square Meter, Square Kilometer, Square Centimeter,
+            Square Foot, Square Inch, Acre এবং Hectare-এর মধ্যে
+            ক্ষেত্রফল রূপান্তর করা যায়।
+        </p>
+
+
+
+        <h3>
+            Volume Converter – আয়তন রূপান্তর
+        </h3>
+
+        <p>
+            Liter, Milliliter, Cubic Meter, US Gallon, Quart,
+            Pint এবং Cup-এর মধ্যে volume conversion করুন।
+        </p>
+
+
+
+        <h3>
+            Time Converter – সময় রূপান্তর
+        </h3>
+
+        <p>
+            Second, Minute, Hour, Day, Week, Month এবং Year-এর
+            মধ্যে সময়ের একক রূপান্তর করুন।
+        </p>
+
+
+
+        <h3>
+            কীভাবে Unit Converter ব্যবহার করবেন?
+        </h3>
+
+        <ul>
+
+            <li>
+                প্রথমে Category নির্বাচন করুন।
+            </li>
+
+            <li>
+                যে unit থেকে conversion করবেন সেটি নির্বাচন করুন।
+            </li>
+
+            <li>
+                প্রয়োজনীয় সংখ্যা লিখুন।
+            </li>
+
+            <li>
+                যে unit-এ ফলাফল চান সেটি নির্বাচন করুন।
+            </li>
+
+            <li>
+                Result অংশে সঙ্গে সঙ্গে conversion দেখতে পাবেন।
+            </li>
+
+        </ul>
+
+
+    </section>
+
 
 
     <a
@@ -434,7 +661,9 @@ footer{
         ← Back to Homepage
     </a>
 
-</div>
+
+</main>
+
 
 
 <footer>
@@ -442,6 +671,7 @@ footer{
     © 2026 BD Utility · Free Online Tools
 
 </footer>
+
 
 
 <script>
@@ -696,6 +926,7 @@ function changeCategory(){
                 document.createElement("option");
 
             option1.value = key;
+
             option1.textContent =
                 categoryUnits[key].name;
 
@@ -706,6 +937,7 @@ function changeCategory(){
                 document.createElement("option");
 
             option2.value = key;
+
             option2.textContent =
                 categoryUnits[key].name;
 
@@ -715,10 +947,6 @@ function changeCategory(){
     );
 
 
-    /*
-        Select sensible default
-    */
-
     const keys =
         Object.keys(categoryUnits);
 
@@ -726,6 +954,7 @@ function changeCategory(){
     if(keys.length > 1){
 
         from.value = keys[0];
+
         to.value = keys[1];
 
     }
@@ -770,10 +999,6 @@ function convert(){
     let result;
 
 
-    /*
-        TEMPERATURE
-    */
-
     if(category === "temperature"){
 
         result =
@@ -784,11 +1009,6 @@ function convert(){
             );
 
     }
-
-
-    /*
-        OTHER UNITS
-    */
 
     else{
 
@@ -837,12 +1057,16 @@ function convertTemperature(
 
         celsius = value;
 
-    }else if(from === "fahrenheit"){
+    }
+
+    else if(from === "fahrenheit"){
 
         celsius =
             (value - 32) * 5 / 9;
 
-    }else if(from === "kelvin"){
+    }
+
+    else if(from === "kelvin"){
 
         celsius =
             value - 273.15;
@@ -856,6 +1080,7 @@ function convertTemperature(
 
     }
 
+
     if(to === "fahrenheit"){
 
         return (
@@ -863,6 +1088,7 @@ function convertTemperature(
         ) + 32;
 
     }
+
 
     if(to === "kelvin"){
 
@@ -877,7 +1103,9 @@ function convertTemperature(
 function formatResult(number){
 
     if(!Number.isFinite(number)){
+
         return "Error";
+
     }
 
 
@@ -932,5 +1160,7 @@ changeCategory();
 
 </script>
 
+
 </body>
 </html>
+```
