@@ -1,12 +1,53 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free BMI Calculator by BD Utility. Calculate BMI using height in cm or feet and inches, and weight in kg or pounds.">
+<!-- SEO -->
+<meta name="description" content="ফ্রি BMI Calculator দিয়ে আপনার Body Mass Index (BMI) হিসাব করুন। কেজি বা পাউন্ড ওজন এবং cm অথবা feet & inches উচ্চতা দিয়ে সহজে BMI হিসাব করুন।">
 
-<title>BMI Calculator | BD Utility</title>
+<meta name="keywords" content="BMI Calculator, BMI ক্যালকুলেটর, BMI হিসাব, BMI calculation, Body Mass Index, বডি মাস ইনডেক্স, ওজন অনুযায়ী BMI, Calculate BMI, BMI chart">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="BD Utility">
+
+<meta name="theme-color" content="#0f4c4c">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/bmi.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="BMI Calculator | BMI হিসাব করুন | BD Utility">
+<meta property="og:description" content="ওজন ও উচ্চতা দিয়ে সহজে BMI হিসাব করুন। kg, pound, cm এবং feet & inches সাপোর্ট করে।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/bmi.html">
+<meta property="og:site_name" content="BD Utility">
+
+<title>BMI Calculator | BMI হিসাব করুন | BD Utility</title>
+
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"BMI Calculator",
+  "alternateName":"BMI ক্যালকুলেটর",
+  "url":"https://shakibtools.github.io/BD-Utility/bmi.html",
+  "description":"ফ্রি BMI Calculator দিয়ে ওজন ও উচ্চতার ভিত্তিতে Body Mass Index হিসাব করুন।",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"Web Browser",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"BDT"
+  }
+}
+</script>
+
 
 <style>
 
@@ -21,6 +62,7 @@ body{
     background:#f4f7f8;
     color:#173235;
     min-height:100vh;
+    line-height:1.6;
 }
 
 header{
@@ -47,7 +89,7 @@ header p{
 
 .container{
     width:92%;
-    max-width:540px;
+    max-width:600px;
     margin:35px auto 50px;
 }
 
@@ -65,7 +107,7 @@ header p{
 .title p{
     color:#687b7d;
     font-size:14px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .calculator{
@@ -190,7 +232,7 @@ input:focus{
 .message{
     color:#667b7d;
     font-size:13px;
-    line-height:1.6;
+    line-height:1.7;
     margin-top:10px;
 }
 
@@ -200,9 +242,9 @@ input:focus{
     padding-top:22px;
 }
 
-.table-box h3{
+.table-box h2{
     color:#0f4c4c;
-    font-size:17px;
+    font-size:18px;
     margin-bottom:12px;
 }
 
@@ -222,6 +264,32 @@ td{
 th{
     color:#0f4c4c;
     background:#f3f7f7;
+}
+
+.info{
+    margin-top:25px;
+    padding:20px;
+    background:#f7f9f9;
+    border-radius:14px;
+    border:1px solid #e0e7e7;
+}
+
+.info h2{
+    color:#0f4c4c;
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.info h3{
+    color:#315759;
+    font-size:15px;
+    margin:14px 0 5px;
+}
+
+.info p{
+    color:#627577;
+    font-size:13px;
+    line-height:1.8;
 }
 
 .reset{
@@ -280,9 +348,11 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <header>
 
@@ -297,7 +367,8 @@ footer{
 </header>
 
 
-<div class="container">
+<main class="container">
+
 
     <div class="title">
 
@@ -306,21 +377,22 @@ footer{
         </h1>
 
         <p>
-            আপনার ওজন ও উচ্চতার ভিত্তিতে BMI হিসাব করুন।
+            BMI ক্যালকুলেটর দিয়ে আপনার ওজন ও উচ্চতার ভিত্তিতে
+            Body Mass Index (BMI) সহজে হিসাব করুন।
         </p>
 
     </div>
 
 
-    <div class="calculator">
+    <section class="calculator">
 
 
         <!-- WEIGHT -->
 
         <div class="input-group">
 
-            <label>
-                Weight
+            <label for="weightUnit">
+                ওজন / Weight
             </label>
 
             <select
@@ -349,6 +421,7 @@ footer{
                     min="1"
                     max="500"
                     step="0.1"
+                    inputmode="decimal"
                 >
 
                 <span
@@ -367,8 +440,8 @@ footer{
 
         <div class="input-group">
 
-            <label>
-                Height
+            <label for="heightUnit">
+                উচ্চতা / Height
             </label>
 
             <select
@@ -402,6 +475,7 @@ footer{
                     min="50"
                     max="300"
                     step="0.1"
+                    inputmode="decimal"
                 >
 
                 <span class="unit">
@@ -427,6 +501,7 @@ footer{
                         min="1"
                         max="9"
                         step="1"
+                        inputmode="numeric"
                     >
 
                     <span class="unit">
@@ -445,6 +520,7 @@ footer{
                         min="0"
                         max="11.99"
                         step="0.1"
+                        inputmode="decimal"
                     >
 
                     <span class="unit">
@@ -471,10 +547,11 @@ footer{
         <div
             class="result"
             id="result"
+            aria-live="polite"
         >
 
             <div class="result-label">
-                Your BMI
+                আপনার BMI / Your BMI
             </div>
 
             <div
@@ -501,15 +578,16 @@ footer{
 
         <div class="table-box">
 
-            <h3>
-                BMI Categories
-            </h3>
+            <h2>
+                BMI Categories / BMI-এর শ্রেণিবিভাগ
+            </h2>
 
             <table>
 
                 <thead>
 
                     <tr>
+
                         <th>
                             BMI
                         </th>
@@ -517,6 +595,7 @@ footer{
                         <th>
                             Category
                         </th>
+
                     </tr>
 
                 </thead>
@@ -524,43 +603,51 @@ footer{
                 <tbody>
 
                     <tr>
+
                         <td>
                             Below 18.5
                         </td>
 
                         <td>
-                            Underweight
+                            Underweight / কম ওজন
                         </td>
+
                     </tr>
 
                     <tr>
+
                         <td>
                             18.5 – 24.9
                         </td>
 
                         <td>
-                            Normal
+                            Normal / স্বাভাবিক
                         </td>
+
                     </tr>
 
                     <tr>
+
                         <td>
                             25.0 – 29.9
                         </td>
 
                         <td>
-                            Overweight
+                            Overweight / অতিরিক্ত ওজন
                         </td>
+
                     </tr>
 
                     <tr>
+
                         <td>
                             30.0 or above
                         </td>
 
                         <td>
-                            Obesity
+                            Obesity / স্থূলতা
                         </td>
+
                     </tr>
 
                 </tbody>
@@ -568,6 +655,53 @@ footer{
             </table>
 
         </div>
+
+
+        <!-- SEO CONTENT -->
+
+        <section class="info">
+
+            <h2>
+                BMI কী?
+            </h2>
+
+            <p>
+                BMI বা Body Mass Index হলো উচ্চতার তুলনায় শরীরের ওজন
+                সম্পর্কে একটি সাধারণ পরিমাপ। BMI Calculator ব্যবহার করে
+                আপনার ওজন ও উচ্চতা থেকে BMI-এর মান সহজে জানা যায়।
+            </p>
+
+
+            <h3>
+                BMI কীভাবে হিসাব করা হয়?
+            </h3>
+
+            <p>
+                BMI হিসাব করতে সাধারণত শরীরের ওজন কিলোগ্রামে এবং
+                উচ্চতা মিটারে ব্যবহার করা হয়। এই ক্যালকুলেটরটি
+                Kilogram, Pound, Centimeter এবং Feet &amp; Inches
+                ইনপুট সাপোর্ট করে।
+            </p>
+
+
+            <h3>
+                BMI কি সবার জন্য একইভাবে প্রযোজ্য?
+            </h3>
+
+            <p>
+                BMI একটি সাধারণ screening measure। এটি একা কোনো
+                ব্যক্তির স্বাস্থ্য বা রোগ নির্ণয় করে না। বয়স, পেশি,
+                শরীরের গঠন এবং অন্যান্য বিষয়ও বিবেচনা করা প্রয়োজন।
+            </p>
+
+            <p style="margin-top:10px;">
+                <strong>নোট:</strong> এই BMI Calculator সাধারণ
+                প্রাপ্তবয়স্কদের জন্য। স্বাস্থ্য সংক্রান্ত সিদ্ধান্তের
+                ক্ষেত্রে প্রয়োজনে চিকিৎসক বা স্বাস্থ্য পেশাজীবীর
+                পরামর্শ নিন।
+            </p>
+
+        </section>
 
 
         <button
@@ -578,7 +712,7 @@ footer{
         </button>
 
 
-    </div>
+    </section>
 
 
     <a
@@ -588,7 +722,8 @@ footer{
         ← Back to Homepage
     </a>
 
-</div>
+
+</main>
 
 
 <footer>
@@ -617,7 +752,6 @@ function changeHeightUnit(){
 
     const unit =
         document.getElementById("heightUnit").value;
-
 
     const cmInput =
         document.getElementById("cmInput");
@@ -672,8 +806,6 @@ function getWeightInKg(){
     }
 
 
-    /* Pound to KG */
-
     return weight * 0.45359237;
 
 }
@@ -685,10 +817,6 @@ function getHeightInMeters(){
     const unit =
         document.getElementById("heightUnit").value;
 
-
-    /*
-        Centimeter
-    */
 
     if(unit === "cm"){
 
@@ -712,10 +840,6 @@ function getHeightInMeters(){
 
     }
 
-
-    /*
-        Feet + Inches
-    */
 
     const feet =
         parseFloat(
@@ -763,7 +887,6 @@ function calculateBMI(){
     const weightKg =
         getWeightInKg();
 
-
     const heightMeters =
         getHeightInMeters();
 
@@ -808,28 +931,28 @@ function calculateBMI(){
 
     if(bmi < 18.5){
 
-        category = "Underweight";
+        category = "Underweight / কম ওজন";
 
         message =
-            "আপনার BMI স্বাভাবিক সীমার নিচে। স্বাস্থ্যকর খাবার ও জীবনযাপনের বিষয়ে একজন স্বাস্থ্য পেশাজীবীর পরামর্শ নিতে পারেন।";
+            "আপনার BMI স্বাভাবিক সীমার নিচে। স্বাস্থ্যকর খাবার ও জীবনযাপনের বিষয়ে একজন স্বাস্থ্য পেশাজীবীর পরামর্শ নিতে পারেন.";
 
     }else if(bmi < 25){
 
-        category = "Normal";
+        category = "Normal / স্বাভাবিক";
 
         message =
             "আপনার BMI সাধারণত স্বাভাবিক সীমার মধ্যে রয়েছে।";
 
     }else if(bmi < 30){
 
-        category = "Overweight";
+        category = "Overweight / অতিরিক্ত ওজন";
 
         message =
             "আপনার BMI স্বাভাবিক সীমার উপরে। স্বাস্থ্যকর খাদ্যাভ্যাস ও নিয়মিত শারীরিক কার্যক্রম উপকারী হতে পারে।";
 
     }else{
 
-        category = "Obesity";
+        category = "Obesity / স্থূলতা";
 
         message =
             "আপনার BMI স্থূলতার পরিসরে পড়ে। ব্যক্তিগত পরামর্শের জন্য একজন স্বাস্থ্য পেশাজীবীর সঙ্গে কথা বলা ভালো।";
@@ -888,7 +1011,11 @@ function resetCalculator(){
 }
 
 
+changeWeightUnit();
+changeHeightUnit();
+
 </script>
 
 </body>
 </html>
+```
