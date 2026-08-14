@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free Number Tools by BD Utility. Number to Words, Prime Checker, Even Odd Checker, GCD LCM, Factorial and Average Calculator.">
+<!-- SEO -->
+<title>Number Tools - Number to Words, Prime, GCD, LCM & Factorial | BD Utility</title>
 
-<title>Number Tools | BD Utility</title>
+<meta name="description" content="Free Number Tools in Bangla. Number to Words, Prime Number Checker, Even Odd Checker, GCD & LCM Calculator, Factorial Calculator and Average Calculator.">
+
+<meta name="keywords" content="number tools, number calculator, number to words, number to words converter, prime number checker, prime checker, even odd checker, GCD calculator, LCM calculator, GCD LCM calculator, factorial calculator, average calculator, number tools bangla, সংখ্যা টু ওয়ার্ড, মৌলিক সংখ্যা, জোড় বিজোড় সংখ্যা, গসাগু লসাগু, ফ্যাক্টোরিয়াল, গড় নির্ণয়">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="BD Utility">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/number-tools.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Number Tools - Free Online Number Calculators | BD Utility">
+<meta property="og:description" content="Number to Words, Prime Number Checker, Even Odd, GCD & LCM, Factorial and Average Calculator - সবগুলো Number Tool এক জায়গায়।">
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/number-tools.html">
+<meta property="og:site_name" content="BD Utility">
+
+<!-- Theme -->
+<meta name="theme-color" content="#0f4c4c">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Number Tools",
+  "url": "https://shakibtools.github.io/BD-Utility/number-tools.html",
+  "description": "Free online number tools including Number to Words, Prime Number Checker, Even Odd Checker, GCD LCM Calculator, Factorial Calculator and Average Calculator.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BD Utility",
+    "url": "https://shakibtools.github.io/BD-Utility/"
+  },
+  "inLanguage": "bn"
+}
+</script>
 
 <style>
 
@@ -66,6 +103,15 @@ header p{
     color:#687b7d;
     font-size:14px;
     line-height:1.6;
+}
+
+.seo-intro{
+    max-width:850px;
+    margin:0 auto 28px;
+    text-align:center;
+    color:#5f7274;
+    font-size:14px;
+    line-height:1.8;
 }
 
 .tools-grid{
@@ -238,7 +284,7 @@ footer{
 
 
 
-<div class="container">
+<main class="container">
 
 
     <div class="title">
@@ -248,10 +294,22 @@ footer{
         </h1>
 
         <p>
-            বিভিন্ন প্রয়োজনীয় Number Tools এক জায়গায় ব্যবহার করুন।
+            Number Calculator ও প্রয়োজনীয় সব Number Tools এক জায়গায়
         </p>
 
     </div>
+
+
+    <p class="seo-intro">
+        BD Utility-এর ফ্রি Number Tools ব্যবহার করে সহজেই
+        <strong>Number to Words</strong>,
+        <strong>Prime Number Checker</strong>,
+        <strong>Even Odd Checker</strong>,
+        <strong>GCD &amp; LCM Calculator</strong>,
+        <strong>Factorial Calculator</strong> এবং
+        <strong>Average Calculator</strong> ব্যবহার করুন।
+        বাংলা ও English—দুইভাবেই সহজে সংখ্যা হিসাব করুন।
+    </p>
 
 
 
@@ -261,18 +319,18 @@ footer{
 
         <!-- NUMBER TO WORDS -->
 
-        <div class="tool-card">
+        <section class="tool-card">
 
             <div class="icon">
                 🔢
             </div>
 
             <h2>
-                Number to Words
+                Number to Words Calculator
             </h2>
 
             <label>
-                Enter a Number
+                Enter a Number / সংখ্যা লিখুন
             </label>
 
             <input
@@ -282,7 +340,7 @@ footer{
             >
 
             <button onclick="numberToWords()">
-                Convert
+                Convert Number to Words
             </button>
 
             <div
@@ -290,13 +348,13 @@ footer{
                 id="wordsResult"
             ></div>
 
-        </div>
+        </section>
 
 
 
         <!-- PRIME NUMBER -->
 
-        <div class="tool-card">
+        <section class="tool-card">
 
             <div class="icon">
                 🔍
@@ -307,7 +365,7 @@ footer{
             </h2>
 
             <label>
-                Enter a Number
+                Enter a Number / সংখ্যা লিখুন
             </label>
 
             <input
@@ -317,7 +375,7 @@ footer{
             >
 
             <button onclick="checkPrime()">
-                Check Number
+                Check Prime Number
             </button>
 
             <div
@@ -325,24 +383,24 @@ footer{
                 id="primeResult"
             ></div>
 
-        </div>
+        </section>
 
 
 
         <!-- EVEN ODD -->
 
-        <div class="tool-card">
+        <section class="tool-card">
 
             <div class="icon">
                 🔢
             </div>
 
             <h2>
-                Even / Odd Checker
+                Even / Odd Number Checker
             </h2>
 
             <label>
-                Enter a Number
+                Enter a Number / সংখ্যা লিখুন
             </label>
 
             <input
@@ -352,7 +410,7 @@ footer{
             >
 
             <button onclick="checkEvenOdd()">
-                Check Number
+                Check Even or Odd
             </button>
 
             <div
@@ -360,13 +418,13 @@ footer{
                 id="evenOddResult"
             ></div>
 
-        </div>
+        </section>
 
 
 
         <!-- GCD LCM -->
 
-        <div class="tool-card">
+        <section class="tool-card">
 
             <div class="icon">
                 🔼
@@ -381,7 +439,7 @@ footer{
                 <div>
 
                     <label>
-                        First Number
+                        First Number / প্রথম সংখ্যা
                     </label>
 
                     <input
@@ -395,7 +453,7 @@ footer{
                 <div>
 
                     <label>
-                        Second Number
+                        Second Number / দ্বিতীয় সংখ্যা
                     </label>
 
                     <input
@@ -409,7 +467,7 @@ footer{
             </div>
 
             <button onclick="calculateGcdLcm()">
-                Calculate
+                Calculate GCD &amp; LCM
             </button>
 
             <div
@@ -417,13 +475,13 @@ footer{
                 id="gcdResult"
             ></div>
 
-        </div>
+        </section>
 
 
 
         <!-- FACTORIAL -->
 
-        <div class="tool-card">
+        <section class="tool-card">
 
             <div class="icon">
                 🔢
@@ -434,7 +492,7 @@ footer{
             </h2>
 
             <label>
-                Enter a Whole Number
+                Enter a Whole Number / পূর্ণ সংখ্যা লিখুন
             </label>
 
             <input
@@ -446,7 +504,7 @@ footer{
             >
 
             <button onclick="calculateFactorial()">
-                Calculate
+                Calculate Factorial
             </button>
 
             <div
@@ -458,13 +516,13 @@ footer{
                 0! = 1. Very large numbers may produce a long result.
             </div>
 
-        </div>
+        </section>
 
 
 
         <!-- AVERAGE -->
 
-        <div class="tool-card">
+        <section class="tool-card">
 
             <div class="icon">
                 📊
@@ -475,7 +533,7 @@ footer{
             </h2>
 
             <label>
-                Enter Numbers
+                Enter Numbers / সংখ্যাগুলো লিখুন
             </label>
 
             <textarea
@@ -496,11 +554,46 @@ footer{
                 Separate numbers with commas, spaces or new lines.
             </div>
 
-        </div>
+        </section>
 
 
 
     </div>
+
+
+    <!-- SEO CONTENT -->
+
+    <section style="margin-top:35px;background:white;border:1px solid #dce5e5;border-radius:18px;padding:25px;line-height:1.8;">
+
+        <h2 style="color:#0f4c4c;font-size:21px;margin-bottom:12px;">
+            Free Online Number Calculator
+        </h2>
+
+        <p style="color:#5f7274;font-size:14px;">
+            Number Tools হলো বিভিন্ন ধরনের সংখ্যার হিসাব করার জন্য একটি
+            সহজ ও ফ্রি অনলাইন টুল। এখানে আপনি
+            <strong>Number to Words</strong>,
+            <strong>Prime Number Checker</strong>,
+            <strong>Even Odd Checker</strong>,
+            <strong>GCD Calculator</strong>,
+            <strong>LCM Calculator</strong>,
+            <strong>Factorial Calculator</strong> এবং
+            <strong>Average Calculator</strong> ব্যবহার করতে পারবেন।
+        </p>
+
+        <br>
+
+        <h3 style="color:#0f4c4c;font-size:17px;margin-bottom:8px;">
+            Number Tools দিয়ে কী কী করা যায়?
+        </h3>
+
+        <p style="color:#5f7274;font-size:14px;">
+            কোনো সংখ্যাকে Words-এ রূপান্তর করা, সংখ্যা Prime কি না পরীক্ষা করা,
+            সংখ্যা জোড় নাকি বিজোড় তা বের করা, দুটি সংখ্যার GCD ও LCM নির্ণয় করা,
+            Factorial হিসাব করা এবং একাধিক সংখ্যার Average বা গড় বের করা যায়।
+        </p>
+
+    </section>
 
 
 
@@ -512,7 +605,7 @@ footer{
     </a>
 
 
-</div>
+</main>
 
 
 
@@ -531,7 +624,6 @@ footer{
    NUMBER TO WORDS
 ========================= */
 
-
 function numberToWords(){
 
     const input =
@@ -539,7 +631,6 @@ function numberToWords(){
 
     const result =
         document.getElementById("wordsResult");
-
 
     if(input === ""){
 
@@ -549,13 +640,10 @@ function numberToWords(){
         );
 
         return;
-
     }
-
 
     const number =
         Number(input);
-
 
     if(
         !Number.isFinite(number) ||
@@ -568,9 +656,7 @@ function numberToWords(){
         );
 
         return;
-
     }
-
 
     if(number < 0){
 
@@ -582,7 +668,6 @@ function numberToWords(){
             );
 
             return;
-
         }
 
         showResult(
@@ -594,9 +679,7 @@ function numberToWords(){
         );
 
         return;
-
     }
-
 
     if(number > 999999999){
 
@@ -606,23 +689,18 @@ function numberToWords(){
         );
 
         return;
-
     }
-
 
     showResult(
         result,
         convertNumberToWords(number)
     );
-
 }
-
 
 
 function convertNumberToWords(number){
 
     const ones = [
-
         "",
         "One",
         "Two",
@@ -643,12 +721,9 @@ function convertNumberToWords(number){
         "Seventeen",
         "Eighteen",
         "Nineteen"
-
     ];
 
-
     const tens = [
-
         "",
         "",
         "Twenty",
@@ -659,23 +734,15 @@ function convertNumberToWords(number){
         "Seventy",
         "Eighty",
         "Ninety"
-
     ];
 
-
     if(number === 0){
-
         return "Zero";
-
     }
-
 
     if(number < 20){
-
         return ones[number];
-
     }
-
 
     if(number < 100){
 
@@ -687,9 +754,7 @@ function convertNumberToWords(number){
             ? " " + ones[number % 10]
             : ""
         );
-
     }
-
 
     if(number < 1000){
 
@@ -703,9 +768,7 @@ function convertNumberToWords(number){
               convertNumberToWords(number % 100)
             : ""
         );
-
     }
-
 
     if(number < 1000000){
 
@@ -719,9 +782,7 @@ function convertNumberToWords(number){
               convertNumberToWords(number % 1000)
             : ""
         );
-
     }
-
 
     return convertNumberToWords(
         Math.floor(number / 1000000)
@@ -733,15 +794,12 @@ function convertNumberToWords(number){
           convertNumberToWords(number % 1000000)
         : ""
     );
-
 }
-
 
 
 /* =========================
    PRIME CHECKER
 ========================= */
-
 
 function checkPrime(){
 
@@ -751,7 +809,6 @@ function checkPrime(){
     const result =
         document.getElementById("primeResult");
 
-
     if(input === ""){
 
         showResult(
@@ -760,13 +817,10 @@ function checkPrime(){
         );
 
         return;
-
     }
-
 
     const number =
         Number(input);
-
 
     if(
         !Number.isInteger(number) ||
@@ -779,9 +833,7 @@ function checkPrime(){
         );
 
         return;
-
     }
-
 
     if(number < 2){
 
@@ -791,9 +843,7 @@ function checkPrime(){
         );
 
         return;
-
     }
-
 
     for(
         let i = 2;
@@ -810,26 +860,20 @@ function checkPrime(){
             );
 
             return;
-
         }
-
     }
-
 
     showResult(
         result,
         number +
         " is a Prime Number. ✓"
     );
-
 }
-
 
 
 /* =========================
    EVEN / ODD
 ========================= */
-
 
 function checkEvenOdd(){
 
@@ -839,7 +883,6 @@ function checkEvenOdd(){
     const result =
         document.getElementById("evenOddResult");
 
-
     if(input === ""){
 
         showResult(
@@ -848,13 +891,10 @@ function checkEvenOdd(){
         );
 
         return;
-
     }
-
 
     const number =
         Number(input);
-
 
     if(!Number.isFinite(number)){
 
@@ -864,9 +904,7 @@ function checkEvenOdd(){
         );
 
         return;
-
     }
-
 
     if(number % 2 === 0){
 
@@ -881,17 +919,13 @@ function checkEvenOdd(){
             result,
             number + " is an Odd Number."
         );
-
     }
-
 }
-
 
 
 /* =========================
    GCD & LCM
 ========================= */
-
 
 function calculateGcdLcm(){
 
@@ -908,7 +942,6 @@ function calculateGcdLcm(){
     const result =
         document.getElementById("gcdResult");
 
-
     if(
         !Number.isInteger(a) ||
         !Number.isInteger(b) ||
@@ -922,17 +955,13 @@ function calculateGcdLcm(){
         );
 
         return;
-
     }
-
 
     a = Math.abs(a);
     b = Math.abs(b);
 
-
     const originalA = a;
     const originalB = b;
-
 
     while(b !== 0){
 
@@ -941,18 +970,14 @@ function calculateGcdLcm(){
         b = a % b;
 
         a = temp;
-
     }
 
-
     const gcd = a;
-
 
     const lcm =
         Math.abs(
             (originalA * originalB) / gcd
         );
-
 
     showResult(
         result,
@@ -961,15 +986,12 @@ function calculateGcdLcm(){
         "<br>LCM = " +
         lcm
     );
-
 }
-
 
 
 /* =========================
    FACTORIAL
 ========================= */
-
 
 function calculateFactorial(){
 
@@ -979,7 +1001,6 @@ function calculateFactorial(){
     const result =
         document.getElementById("factorialResult");
 
-
     if(input === ""){
 
         showResult(
@@ -988,13 +1009,10 @@ function calculateFactorial(){
         );
 
         return;
-
     }
-
 
     const number =
         Number(input);
-
 
     if(
         !Number.isInteger(number) ||
@@ -1007,9 +1025,7 @@ function calculateFactorial(){
         );
 
         return;
-
     }
-
 
     if(number > 170){
 
@@ -1019,12 +1035,9 @@ function calculateFactorial(){
         );
 
         return;
-
     }
 
-
     let factorial = 1;
-
 
     for(
         let i = 2;
@@ -1033,9 +1046,7 @@ function calculateFactorial(){
     ){
 
         factorial *= i;
-
     }
-
 
     showResult(
         result,
@@ -1043,15 +1054,12 @@ function calculateFactorial(){
         "! = " +
         factorial.toLocaleString("en-US")
     );
-
 }
-
 
 
 /* =========================
    AVERAGE
 ========================= */
-
 
 function calculateAverage(){
 
@@ -1061,7 +1069,6 @@ function calculateAverage(){
     const result =
         document.getElementById("averageResult");
 
-
     if(input === ""){
 
         showResult(
@@ -1070,9 +1077,7 @@ function calculateAverage(){
         );
 
         return;
-
     }
-
 
     const numbers =
         input
@@ -1082,7 +1087,6 @@ function calculateAverage(){
             number => Number.isFinite(number)
         );
 
-
     if(numbers.length === 0){
 
         showResult(
@@ -1091,9 +1095,7 @@ function calculateAverage(){
         );
 
         return;
-
     }
-
 
     const sum =
         numbers.reduce(
@@ -1102,10 +1104,8 @@ function calculateAverage(){
             0
         );
 
-
     const average =
         sum / numbers.length;
-
 
     showResult(
         result,
@@ -1121,15 +1121,12 @@ function calculateAverage(){
         +
         numbers.length
     );
-
 }
-
 
 
 /* =========================
    RESULT DISPLAY
 ========================= */
-
 
 function showResult(
     element,
@@ -1139,7 +1136,6 @@ function showResult(
     element.innerHTML = text;
 
     element.classList.add("show");
-
 }
 
 </script>
