@@ -1,12 +1,33 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Free Percentage Calculator - Calculate percentage, percentage change and discount easily.">
-<title>Percentage Calculator | BD Utility</title>
+
+<meta name="description" content="শতকরা ক্যালকুলেটর দিয়ে সহজে percentage হিসাব করুন। কোনো সংখ্যার কত শতাংশ, percentage increase বা decrease এবং discount হিসাব করুন। Free Percentage Calculator by BD Utility.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/percentage-calculator.html">
+
+<meta property="og:title" content="Percentage Calculator – শতকরা হিসাব করুন | BD Utility">
+
+<meta property="og:description" content="কোনো সংখ্যার কত শতাংশ, percentage increase/decrease এবং discount সহজে হিসাব করুন। Free online Percentage Calculator.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/percentage-calculator.html">
+
+<meta name="theme-color" content="#0f4c4c">
+
+<title>Percentage Calculator – শতকরা হিসাব করুন | BD Utility</title>
+
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -50,18 +71,41 @@ header p{
 
 .top{
     text-align:center;
-    margin-bottom:28px;
+    margin-bottom:25px;
 }
 
 .top h1{
     color:#0f4c4c;
     font-size:29px;
-    margin-bottom:8px;
+    margin-bottom:9px;
+    line-height:1.4;
 }
 
 .top p{
     color:#687b7d;
     font-size:14px;
+    line-height:1.7;
+}
+
+.intro{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:22px;
+    box-shadow:0 5px 18px rgba(15,76,76,.05);
+}
+
+.intro h2{
+    color:#0f4c4c;
+    font-size:20px;
+    margin-bottom:9px;
+}
+
+.intro p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.8;
 }
 
 .card{
@@ -77,13 +121,14 @@ header p{
     color:#0f4c4c;
     font-size:20px;
     margin-bottom:8px;
+    line-height:1.5;
 }
 
 .card .desc{
     color:#718082;
     font-size:13px;
     margin-bottom:20px;
-    line-height:1.5;
+    line-height:1.7;
 }
 
 .input-row{
@@ -140,6 +185,7 @@ button:hover{
     text-align:center;
     font-size:18px;
     font-weight:bold;
+    line-height:1.6;
 }
 
 .result small{
@@ -148,6 +194,40 @@ button:hover{
     font-size:12px;
     font-weight:normal;
     color:#587071;
+}
+
+.info-section{
+    background:white;
+    border:1px solid #dce5e5;
+    border-radius:16px;
+    padding:22px;
+    margin-top:25px;
+}
+
+.info-section h2{
+    color:#0f4c4c;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.info-section h3{
+    color:#173235;
+    font-size:16px;
+    margin-top:18px;
+    margin-bottom:7px;
+}
+
+.info-section p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.info-section ul{
+    margin-left:20px;
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.9;
 }
 
 .back{
@@ -170,6 +250,7 @@ footer{
 }
 
 @media(max-width:600px){
+
     .container{
         width:90%;
         margin-top:28px;
@@ -186,238 +267,577 @@ footer{
     .input-row{
         grid-template-columns:1fr;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
-    <div class="logo">BD Utility <span>🇧🇩</span></div>
-    <p>Simple &amp; Useful Tools for Everyone</p>
+
+    <div class="logo">
+        BD Utility <span>🇧🇩</span>
+    </div>
+
+    <p>
+        Simple &amp; Useful Tools for Everyone
+    </p>
+
 </header>
 
 
-<div class="container">
 
-    <div class="top">
-        <h1>Percentage Calculator</h1>
-        <p>সহজে বিভিন্ন ধরনের Percentage হিসাব করুন</p>
-    </div>
+<main class="container">
+
+
+    <section class="top">
+
+        <h1>
+            Percentage Calculator – শতকরা ক্যালকুলেটর
+        </h1>
+
+        <p>
+            Percentage, শতকরা হিসাব, বৃদ্ধি-হ্রাস এবং Discount সহজে হিসাব করুন
+        </p>
+
+    </section>
+
+
+
+    <section class="intro">
+
+        <h2>
+            Free Online Percentage Calculator | শতকরা হিসাব
+        </h2>
+
+        <p>
+            এই Percentage Calculator ব্যবহার করে কোনো সংখ্যার
+            কত শতাংশ, একটি সংখ্যা অন্যটির কত শতাংশ, percentage
+            increase বা decrease এবং discount-এর পরের দাম সহজেই
+            হিসাব করতে পারবেন। এটি সম্পূর্ণ বিনামূল্যে এবং মোবাইল
+            ও কম্পিউটার উভয় ডিভাইসে ব্যবহার করা যায়।
+        </p>
+
+    </section>
+
 
 
     <!-- 1. Percentage of a Number -->
 
-    <div class="card">
+    <section class="card">
 
-        <h2>① কোনো সংখ্যার X% কত?</h2>
+        <h2>
+            ① কোনো সংখ্যার X% কত?
+        </h2>
 
         <p class="desc">
+            কোনো সংখ্যার নির্দিষ্ট percentage বা শতকরা অংশ বের করুন।
             উদাহরণ: 500-এর 15% কত?
         </p>
 
         <div class="input-row">
 
             <div>
-                <label>সংখ্যা</label>
-                <input type="number" id="num1" placeholder="যেমন: 500">
+
+                <label for="num1">
+                    সংখ্যা
+                </label>
+
+                <input
+                    type="number"
+                    id="num1"
+                    placeholder="যেমন: 500"
+                >
+
             </div>
 
+
             <div>
-                <label>Percentage (%)</label>
-                <input type="number" id="percent1" placeholder="যেমন: 15">
+
+                <label for="percent1">
+                    Percentage (%)
+                </label>
+
+                <input
+                    type="number"
+                    id="percent1"
+                    placeholder="যেমন: 15"
+                >
+
             </div>
 
         </div>
 
+
         <button onclick="calculatePercentOfNumber()">
-            Calculate
+            Calculate Percentage
         </button>
 
-        <div class="result" id="result1"></div>
 
-    </div>
+        <div
+            class="result"
+            id="result1"
+        ></div>
+
+    </section>
+
 
 
     <!-- 2. What Percentage -->
 
-    <div class="card">
+    <section class="card">
 
-        <h2>② একটি সংখ্যা অন্যটির কত শতাংশ?</h2>
+        <h2>
+            ② একটি সংখ্যা অন্যটির কত শতাংশ?
+        </h2>
 
         <p class="desc">
+            একটি সংখ্যা মোট সংখ্যার কত শতাংশ তা বের করুন।
             উদাহরণ: 75 হলো 500-এর কত শতাংশ?
         </p>
 
         <div class="input-row">
 
             <div>
-                <label>প্রথম সংখ্যা</label>
-                <input type="number" id="part" placeholder="যেমন: 75">
+
+                <label for="part">
+                    প্রথম সংখ্যা
+                </label>
+
+                <input
+                    type="number"
+                    id="part"
+                    placeholder="যেমন: 75"
+                >
+
             </div>
 
+
             <div>
-                <label>মোট সংখ্যা</label>
-                <input type="number" id="whole" placeholder="যেমন: 500">
+
+                <label for="whole">
+                    মোট সংখ্যা
+                </label>
+
+                <input
+                    type="number"
+                    id="whole"
+                    placeholder="যেমন: 500"
+                >
+
             </div>
 
         </div>
 
+
         <button onclick="calculateWhatPercent()">
-            Calculate
+            Calculate Percentage
         </button>
 
-        <div class="result" id="result2"></div>
 
-    </div>
+        <div
+            class="result"
+            id="result2"
+        ></div>
+
+    </section>
+
 
 
     <!-- 3. Percentage Change -->
 
-    <div class="card">
+    <section class="card">
 
-        <h2>③ Percentage Increase / Decrease</h2>
+        <h2>
+            ③ Percentage Increase / Decrease – শতকরা বৃদ্ধি বা হ্রাস
+        </h2>
 
         <p class="desc">
-            পুরোনো ও নতুন মূল্য দিয়ে কত শতাংশ বৃদ্ধি বা কমেছে হিসাব করুন।
+            পুরোনো ও নতুন সংখ্যার মধ্যে কত শতাংশ বৃদ্ধি বা কমেছে
+            তা হিসাব করুন।
         </p>
 
         <div class="input-row">
 
             <div>
-                <label>পুরোনো সংখ্যা</label>
-                <input type="number" id="oldValue" placeholder="যেমন: 500">
+
+                <label for="oldValue">
+                    পুরোনো সংখ্যা
+                </label>
+
+                <input
+                    type="number"
+                    id="oldValue"
+                    placeholder="যেমন: 500"
+                >
+
             </div>
 
+
             <div>
-                <label>নতুন সংখ্যা</label>
-                <input type="number" id="newValue" placeholder="যেমন: 600">
+
+                <label for="newValue">
+                    নতুন সংখ্যা
+                </label>
+
+                <input
+                    type="number"
+                    id="newValue"
+                    placeholder="যেমন: 600"
+                >
+
             </div>
 
         </div>
 
+
         <button onclick="calculateChange()">
-            Calculate
+            Calculate Change
         </button>
 
-        <div class="result" id="result3"></div>
 
-    </div>
+        <div
+            class="result"
+            id="result3"
+        ></div>
+
+    </section>
+
 
 
     <!-- 4. Discount -->
 
-    <div class="card">
+    <section class="card">
 
-        <h2>④ Discount Calculator</h2>
+        <h2>
+            ④ Discount Calculator – ছাড়ের হিসাব
+        </h2>
 
         <p class="desc">
-            কোনো পণ্যের দাম এবং discount percentage দিয়ে discount-এর পরের দাম বের করুন।
+            কোনো পণ্যের মূল দাম ও discount percentage দিয়ে
+            কত টাকা ছাড় এবং ছাড়ের পরের দাম বের করুন।
         </p>
 
         <div class="input-row">
 
             <div>
-                <label>মূল দাম (৳)</label>
-                <input type="number" id="price" placeholder="যেমন: 1000">
+
+                <label for="price">
+                    মূল দাম (৳)
+                </label>
+
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="যেমন: 1000"
+                    min="0"
+                >
+
             </div>
 
+
             <div>
-                <label>Discount (%)</label>
-                <input type="number" id="discount" placeholder="যেমন: 20">
+
+                <label for="discount">
+                    Discount (%)
+                </label>
+
+                <input
+                    type="number"
+                    id="discount"
+                    placeholder="যেমন: 20"
+                    min="0"
+                    max="100"
+                >
+
             </div>
 
         </div>
 
+
         <button onclick="calculateDiscount()">
-            Calculate
+            Calculate Discount
         </button>
 
-        <div class="result" id="result4"></div>
 
-    </div>
+        <div
+            class="result"
+            id="result4"
+        ></div>
+
+    </section>
 
 
-    <a href="index.html" class="back">
+
+    <!-- SEO INFORMATION -->
+
+    <section class="info-section">
+
+        <h2>
+            Percentage Calculator সম্পর্কে
+        </h2>
+
+        <p>
+            Percentage Calculator বা শতকরা ক্যালকুলেটর হলো এমন
+            একটি অনলাইন tool যার মাধ্যমে বিভিন্ন ধরনের percentage
+            বা শতকরা হিসাব দ্রুত করা যায়। যেমন কোনো সংখ্যার
+            নির্দিষ্ট শতাংশ বের করা, একটি সংখ্যা অন্যটির কত শতাংশ
+            তা জানা, কোনো value কত শতাংশ বেড়েছে বা কমেছে এবং
+            discount-এর পরের দাম হিসাব করা।
+        </p>
+
+
+        <h3>
+            এই Percentage Calculator দিয়ে কী হিসাব করা যায়?
+        </h3>
+
+        <ul>
+
+            <li>
+                কোনো সংখ্যার নির্দিষ্ট percentage বের করা
+            </li>
+
+            <li>
+                একটি সংখ্যা অন্যটির কত শতাংশ তা বের করা
+            </li>
+
+            <li>
+                Percentage Increase বা শতকরা বৃদ্ধি হিসাব করা
+            </li>
+
+            <li>
+                Percentage Decrease বা শতকরা হ্রাস হিসাব করা
+            </li>
+
+            <li>
+                Discount amount বা ছাড়ের পরিমাণ বের করা
+            </li>
+
+            <li>
+                Discount-এর পর পণ্যের final price বের করা
+            </li>
+
+        </ul>
+
+
+        <h3>
+            Percentage বা শতকরা কী?
+        </h3>
+
+        <p>
+            Percentage অর্থ হলো কোনো সংখ্যাকে 100-এর ভিত্তিতে
+            প্রকাশ করা। উদাহরণ হিসেবে, 50% অর্থ 100-এর মধ্যে 50।
+            একইভাবে 25% অর্থ 100-এর মধ্যে 25 অংশ।
+        </p>
+
+
+        <h3>
+            কীভাবে Percentage হিসাব করবেন?
+        </h3>
+
+        <p>
+            কোনো সংখ্যার X% বের করতে সংখ্যাটিকে X দিয়ে গুণ করে
+            100 দিয়ে ভাগ করতে হয়। আমাদের calculator-এ শুধু
+            প্রয়োজনীয় সংখ্যা ও percentage লিখলেই ফলাফল পাওয়া যাবে।
+        </p>
+
+
+        <h3>
+            Discount হিসাব করার নিয়ম
+        </h3>
+
+        <p>
+            কোনো পণ্যের মূল দাম এবং discount percentage দিলে
+            calculator প্রথমে discount-এর টাকার পরিমাণ বের করে।
+            এরপর মূল দাম থেকে discount বাদ দিয়ে final price দেখায়।
+        </p>
+
+    </section>
+
+
+
+    <a
+        href="index.html"
+        class="back"
+    >
         ← Back to Homepage
     </a>
 
-</div>
+
+</main>
+
 
 
 <footer>
+
     © 2026 BD Utility · Free Online Tools
+
 </footer>
+
 
 
 <script>
 
+
 function showResult(id, html){
-    const result = document.getElementById(id);
-    result.innerHTML = html;
-    result.style.display = "block";
+
+    const result =
+        document.getElementById(id);
+
+    result.innerHTML =
+        html;
+
+    result.style.display =
+        "block";
+
 }
 
+
+
+/* 1. Percentage of a Number */
 
 function calculatePercentOfNumber(){
 
-    const number = parseFloat(document.getElementById("num1").value);
-    const percent = parseFloat(document.getElementById("percent1").value);
+    const number =
+        parseFloat(
+            document.getElementById("num1").value
+        );
 
-    if(isNaN(number) || isNaN(percent)){
-        showResult("result1","দয়া করে দুটি ঘরই পূরণ করুন।");
+    const percent =
+        parseFloat(
+            document.getElementById("percent1").value
+        );
+
+
+    if(
+        isNaN(number) ||
+        isNaN(percent)
+    ){
+
+        showResult(
+            "result1",
+            "দয়া করে দুটি ঘরই পূরণ করুন।"
+        );
+
         return;
     }
 
-    const answer = number * percent / 100;
+
+    const answer =
+        number * percent / 100;
+
 
     showResult(
         "result1",
-        `${percent}% of ${number} = ${answer}<small>উত্তর</small>`
+        `${percent}% of ${number} = ${answer}
+        <small>উত্তর / Answer</small>`
     );
+
 }
 
 
+
+/* 2. What Percentage */
+
 function calculateWhatPercent(){
 
-    const part = parseFloat(document.getElementById("part").value);
-    const whole = parseFloat(document.getElementById("whole").value);
+    const part =
+        parseFloat(
+            document.getElementById("part").value
+        );
 
-    if(isNaN(part) || isNaN(whole)){
-        showResult("result2","দয়া করে দুটি ঘরই পূরণ করুন।");
+    const whole =
+        parseFloat(
+            document.getElementById("whole").value
+        );
+
+
+    if(
+        isNaN(part) ||
+        isNaN(whole)
+    ){
+
+        showResult(
+            "result2",
+            "দয়া করে দুটি ঘরই পূরণ করুন।"
+        );
+
         return;
     }
+
 
     if(whole === 0){
-        showResult("result2","মোট সংখ্যা 0 হতে পারে না।");
+
+        showResult(
+            "result2",
+            "মোট সংখ্যা 0 হতে পারে না।"
+        );
+
         return;
     }
 
-    const answer = (part / whole) * 100;
+
+    const answer =
+        (part / whole) * 100;
+
 
     showResult(
         "result2",
         `${part} হলো ${whole}-এর ${answer.toFixed(2)}%`
     );
+
 }
 
 
+
+/* 3. Percentage Change */
+
 function calculateChange(){
 
-    const oldValue = parseFloat(document.getElementById("oldValue").value);
-    const newValue = parseFloat(document.getElementById("newValue").value);
+    const oldValue =
+        parseFloat(
+            document.getElementById("oldValue").value
+        );
 
-    if(isNaN(oldValue) || isNaN(newValue)){
-        showResult("result3","দয়া করে দুটি ঘরই পূরণ করুন।");
+    const newValue =
+        parseFloat(
+            document.getElementById("newValue").value
+        );
+
+
+    if(
+        isNaN(oldValue) ||
+        isNaN(newValue)
+    ){
+
+        showResult(
+            "result3",
+            "দয়া করে দুটি ঘরই পূরণ করুন।"
+        );
+
         return;
     }
+
 
     if(oldValue === 0){
-        showResult("result3","পুরোনো সংখ্যা 0 হতে পারে না।");
+
+        showResult(
+            "result3",
+            "পুরোনো সংখ্যা 0 হতে পারে না।"
+        );
+
         return;
     }
 
-    const change = ((newValue - oldValue) / oldValue) * 100;
+
+    const change =
+        ((newValue - oldValue) / oldValue) * 100;
+
 
     if(change > 0){
 
@@ -426,14 +846,18 @@ function calculateChange(){
             `বৃদ্ধি হয়েছে ${change.toFixed(2)}%`
         );
 
-    }else if(change < 0){
+    }
+
+    else if(change < 0){
 
         showResult(
             "result3",
             `কমেছে ${Math.abs(change).toFixed(2)}%`
         );
 
-    }else{
+    }
+
+    else{
 
         showResult(
             "result3",
@@ -441,30 +865,83 @@ function calculateChange(){
         );
 
     }
+
 }
 
 
+
+/* 4. Discount */
+
 function calculateDiscount(){
 
-    const price = parseFloat(document.getElementById("price").value);
-    const discount = parseFloat(document.getElementById("discount").value);
+    const price =
+        parseFloat(
+            document.getElementById("price").value
+        );
 
-    if(isNaN(price) || isNaN(discount)){
-        showResult("result4","দয়া করে দুটি ঘরই পূরণ করুন।");
+    const discount =
+        parseFloat(
+            document.getElementById("discount").value
+        );
+
+
+    if(
+        isNaN(price) ||
+        isNaN(discount)
+    ){
+
+        showResult(
+            "result4",
+            "দয়া করে দুটি ঘরই পূরণ করুন।"
+        );
+
         return;
     }
 
-    const discountAmount = price * discount / 100;
-    const finalPrice = price - discountAmount;
+
+    if(price < 0){
+
+        showResult(
+            "result4",
+            "মূল দাম 0 বা তার বেশি হতে হবে।"
+        );
+
+        return;
+    }
+
+
+    if(discount < 0 || discount > 100){
+
+        showResult(
+            "result4",
+            "Discount 0% থেকে 100%-এর মধ্যে হতে হবে।"
+        );
+
+        return;
+    }
+
+
+    const discountAmount =
+        price * discount / 100;
+
+
+    const finalPrice =
+        price - discountAmount;
+
 
     showResult(
         "result4",
         `Discount = ৳${discountAmount.toFixed(2)}
-        <small>Discount-এর পর দাম = ৳${finalPrice.toFixed(2)}</small>`
+        <small>
+        Discount-এর পর দাম = ৳${finalPrice.toFixed(2)}
+        </small>`
     );
+
 }
 
 </script>
 
+
 </body>
 </html>
+```
