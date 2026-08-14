@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free Simple Calculator by BD Utility. Perform basic arithmetic calculations quickly and easily.">
+<meta name="description" content="Simple Calculator বা সাধারণ ক্যালকুলেটর দিয়ে যোগ, বিয়োগ, গুণ, ভাগ, percentage এবং দৈনন্দিন সাধারণ হিসাব দ্রুত করুন। Free Online Calculator by BD Utility.">
 
-<title>Simple Calculator | BD Utility</title>
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://shakibtools.github.io/BD-Utility/simple-calculator.html">
+
+<meta property="og:title" content="Simple Calculator – সাধারণ ক্যালকুলেটর | BD Utility">
+
+<meta property="og:description" content="যোগ, বিয়োগ, গুণ, ভাগ ও percentage-এর সাধারণ হিসাব দ্রুত করুন। মোবাইল ও কম্পিউটারে বিনামূল্যে ব্যবহার করুন।">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://shakibtools.github.io/BD-Utility/simple-calculator.html">
+
+<meta name="theme-color" content="#0f4c4c">
+
+<title>Simple Calculator – সাধারণ ক্যালকুলেটর | BD Utility</title>
+
 
 <style>
 
@@ -47,7 +64,7 @@ header p{
 
 .container{
     width:92%;
-    max-width:430px;
+    max-width:500px;
     margin:35px auto 50px;
 }
 
@@ -60,11 +77,13 @@ header p{
     color:#0f4c4c;
     font-size:29px;
     margin-bottom:8px;
+    line-height:1.4;
 }
 
 .title p{
     color:#687b7d;
     font-size:14px;
+    line-height:1.7;
 }
 
 .calculator{
@@ -163,6 +182,41 @@ button:active{
     grid-column:span 2;
 }
 
+.info-section{
+    background:#ffffff;
+    border:1px solid #dce5e5;
+    border-radius:16px;
+    padding:22px;
+    margin-top:25px;
+}
+
+.info-section h2{
+    color:#0f4c4c;
+    font-size:20px;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.info-section h3{
+    color:#173235;
+    font-size:16px;
+    margin-top:18px;
+    margin-bottom:7px;
+}
+
+.info-section p{
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.info-section ul{
+    margin-left:20px;
+    color:#687b7d;
+    font-size:14px;
+    line-height:1.9;
+}
+
 .back{
     display:block;
     text-align:center;
@@ -204,9 +258,12 @@ footer{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -221,51 +278,82 @@ footer{
 </header>
 
 
-<div class="container">
 
-    <div class="title">
+<main class="container">
+
+
+    <section class="title">
 
         <h1>
-            Simple Calculator
+            Simple Calculator – সাধারণ ক্যালকুলেটর
         </h1>
 
         <p>
-            যোগ, বিয়োগ, গুণ, ভাগ এবং Percentage হিসাব করুন।
+            যোগ, বিয়োগ, গুণ, ভাগ ও Percentage-এর সাধারণ হিসাব করুন
         </p>
 
-    </div>
+    </section>
 
 
-    <div class="calculator">
+
+    <section class="calculator">
 
         <div class="display">
 
-            <div class="previous" id="previous"></div>
+            <div
+                class="previous"
+                id="previous"
+            ></div>
 
-            <div class="current" id="current">
+            <div
+                class="current"
+                id="current"
+            >
                 0
             </div>
 
         </div>
 
 
+
         <div class="buttons">
 
-            <button class="clear" onclick="clearAll()">
+
+            <button
+                class="clear"
+                onclick="clearAll()"
+                aria-label="Clear calculator"
+            >
                 AC
             </button>
 
-            <button class="action" onclick="backspace()">
+
+            <button
+                class="action"
+                onclick="backspace()"
+                aria-label="Backspace"
+            >
                 ⌫
             </button>
 
-            <button class="action" onclick="percentage()">
+
+            <button
+                class="action"
+                onclick="percentage()"
+                aria-label="Percentage"
+            >
                 %
             </button>
 
-            <button class="operator" onclick="chooseOperator('÷')">
+
+            <button
+                class="operator"
+                onclick="chooseOperator('÷')"
+                aria-label="Divide"
+            >
                 ÷
             </button>
+
 
 
             <button onclick="appendNumber('7')">
@@ -280,9 +368,13 @@ footer{
                 9
             </button>
 
-            <button class="operator" onclick="chooseOperator('×')">
+            <button
+                class="operator"
+                onclick="chooseOperator('×')"
+            >
                 ×
             </button>
+
 
 
             <button onclick="appendNumber('4')">
@@ -297,9 +389,13 @@ footer{
                 6
             </button>
 
-            <button class="operator" onclick="chooseOperator('-')">
+            <button
+                class="operator"
+                onclick="chooseOperator('-')"
+            >
                 −
             </button>
+
 
 
             <button onclick="appendNumber('1')">
@@ -314,12 +410,19 @@ footer{
                 3
             </button>
 
-            <button class="operator" onclick="chooseOperator('+')">
+            <button
+                class="operator"
+                onclick="chooseOperator('+')"
+            >
                 +
             </button>
 
 
-            <button class="zero" onclick="appendNumber('0')">
+
+            <button
+                class="zero"
+                onclick="appendNumber('0')"
+            >
                 0
             </button>
 
@@ -327,20 +430,111 @@ footer{
                 .
             </button>
 
-            <button class="equal" onclick="calculate()">
+            <button
+                class="equal"
+                onclick="calculate()"
+            >
                 =
             </button>
 
+
         </div>
 
-    </div>
+    </section>
 
 
-    <a href="index.html" class="back">
+
+    <section class="info-section">
+
+
+        <h2>
+            Simple Calculator সম্পর্কে
+        </h2>
+
+
+        <p>
+            Simple Calculator বা সাধারণ ক্যালকুলেটর হলো একটি
+            সহজ অনলাইন ক্যালকুলেটর যার মাধ্যমে দৈনন্দিন প্রয়োজনীয়
+            যোগ, বিয়োগ, গুণ, ভাগ এবং percentage-এর হিসাব দ্রুত
+            করা যায়। কোনো software বা app install করার প্রয়োজন নেই।
+        </p>
+
+
+
+        <h3>
+            এই Calculator দিয়ে কী করা যায়?
+        </h3>
+
+
+        <ul>
+
+            <li>
+                যোগ / Addition
+            </li>
+
+            <li>
+                বিয়োগ / Subtraction
+            </li>
+
+            <li>
+                গুণ / Multiplication
+            </li>
+
+            <li>
+                ভাগ / Division
+            </li>
+
+            <li>
+                Percentage / শতকরা হিসাব
+            </li>
+
+            <li>
+                Decimal সংখ্যা দিয়ে হিসাব
+            </li>
+
+        </ul>
+
+
+
+        <h3>
+            Percentage হিসাব
+        </h3>
+
+
+        <p>
+            Calculator-এর % button ব্যবহার করে percentage হিসাব
+            করা যায়। যেমন 500 - 10% করলে ফলাফল হবে 450।
+            একইভাবে 500 + 10% করলে 550 পাওয়া যাবে।
+        </p>
+
+
+
+        <h3>
+            Keyboard দিয়েও ব্যবহার করুন
+        </h3>
+
+
+        <p>
+            কম্পিউটারে keyboard ব্যবহার করেও calculator পরিচালনা
+            করা যায়। Number, +, -, *, /, Enter, Backspace, Escape
+            এবং % key ব্যবহার করা যাবে।
+        </p>
+
+
+    </section>
+
+
+
+    <a
+        href="index.html"
+        class="back"
+    >
         ← Back to Homepage
     </a>
 
-</div>
+
+</main>
+
 
 
 <footer>
@@ -350,17 +544,25 @@ footer{
 </footer>
 
 
+
 <script>
 
+
 let currentValue = "0";
+
 let previousValue = "";
+
 let operator = null;
+
 let shouldResetScreen = false;
+
 let percentageMode = false;
+
 
 
 const currentDisplay =
     document.getElementById("current");
+
 
 const previousDisplay =
     document.getElementById("previous");
@@ -371,6 +573,7 @@ function updateDisplay(){
 
     currentDisplay.textContent =
         formatNumber(currentValue);
+
 
     previousDisplay.textContent =
         previousValue && operator
@@ -387,15 +590,20 @@ function formatNumber(value){
         return value;
     }
 
+
     if(value === ""){
         return "0";
     }
 
-    const number = Number(value);
+
+    const number =
+        Number(value);
+
 
     if(!Number.isFinite(number)){
         return "Error";
     }
+
 
     return number.toLocaleString(
         "en-US",
@@ -414,9 +622,11 @@ function appendNumber(number){
         clearAll();
     }
 
+
     if(shouldResetScreen){
 
         currentValue = number;
+
         shouldResetScreen = false;
 
     }else{
@@ -433,6 +643,7 @@ function appendNumber(number){
 
     }
 
+
     percentageMode = false;
 
     updateDisplay();
@@ -447,9 +658,11 @@ function appendDecimal(){
         clearAll();
     }
 
+
     if(shouldResetScreen){
 
         currentValue = "0.";
+
         shouldResetScreen = false;
 
     }else if(!currentValue.includes(".")){
@@ -457,6 +670,7 @@ function appendDecimal(){
         currentValue += ".";
 
     }
+
 
     percentageMode = false;
 
@@ -472,15 +686,23 @@ function chooseOperator(selectedOperator){
         return;
     }
 
-    if(operator !== null && !shouldResetScreen){
+
+    if(
+        operator !== null &&
+        !shouldResetScreen
+    ){
 
         calculate();
 
     }
 
+
     previousValue = currentValue;
+
     operator = selectedOperator;
+
     shouldResetScreen = true;
+
     percentageMode = false;
 
     updateDisplay();
@@ -507,6 +729,7 @@ function chooseOperator(selectedOperator){
     500 ÷ 10%
     = 5000
 */
+
 
 function percentage(){
 
@@ -550,7 +773,9 @@ function percentage(){
     }else{
 
         currentValue =
-            String(current / 100);
+            String(
+                current / 100
+            );
 
     }
 
@@ -570,7 +795,9 @@ function calculate(){
         previousValue === "" ||
         currentValue === ""
     ){
+
         return;
+
     }
 
 
@@ -591,6 +818,7 @@ function calculate(){
         500 - 10%
         means 500 - 10% of 500
     */
+
 
     if(
         percentageMode &&
@@ -629,9 +857,13 @@ function calculate(){
         if(second === 0){
 
             currentValue = "Error";
+
             previousValue = "";
+
             operator = null;
+
             shouldResetScreen = true;
+
             percentageMode = false;
 
             updateDisplay();
@@ -639,6 +871,7 @@ function calculate(){
             return;
 
         }
+
 
         result =
             first / second;
@@ -663,8 +896,11 @@ function calculate(){
 
 
     previousValue = "";
+
     operator = null;
+
     shouldResetScreen = true;
+
     percentageMode = false;
 
     updateDisplay();
@@ -676,9 +912,13 @@ function calculate(){
 function clearAll(){
 
     currentValue = "0";
+
     previousValue = "";
+
     operator = null;
+
     shouldResetScreen = false;
+
     percentageMode = false;
 
     updateDisplay();
@@ -693,7 +933,9 @@ function backspace(){
         shouldResetScreen ||
         currentValue === "Error"
     ){
+
         return;
+
     }
 
 
@@ -727,7 +969,8 @@ document.addEventListener(
     "keydown",
     function(event){
 
-        const key = event.key;
+        const key =
+            event.key;
 
 
         if(
@@ -781,7 +1024,9 @@ document.addEventListener(
 
             clearAll();
 
-        }else if(key === "%"){
+        }else if(
+            key === "%"
+        ){
 
             percentage();
 
@@ -790,7 +1035,9 @@ document.addEventListener(
     }
 );
 
+
 </script>
+
 
 </body>
 </html>
